@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Embed code", sans-serif;
+}
+
+body{
+    background-color: rgb(7, 8, 51);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.container{
+    background-color: rgb(214, 213, 213);
+    color: black;
+    width: 400px;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3),
+                inset -5px -5px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: blueviolet;
+}
+.contar{
+    font-size: 70px;
+}
+
+.contadores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 140px;
+}
+
+.btn{
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid black;
+    background-color: rgb(30, 160, 52);
+    box-shadow: 4px 4px 0 black;
+    cursor: pointer;
+}
+
+.btn:active{
+    position: relative;
+    top: 4px;
+    left: 4px;
+    box-shadow: none;
+}
+
+.reset{
+    color: white;
+    background-color: rgb(14, 79, 122);
+    padding: 3px 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.reset:active{
+    transform: scale(0.95);
+}

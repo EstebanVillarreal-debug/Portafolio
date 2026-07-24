@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani';
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3)),
+        url(img/Fondo.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#pantalla-inicial {
+    display: block;
+    max-width: 700px;
+    margin: 50px auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#pantalla-inicial h1 {
+    font-family: 'Rammetto One';
+    font-size: 50px;
+    color: #d9596a;
+}
+
+button {
+    background: #c56672;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 20px;
+    border-radius: 30px;
+    border-bottom: 4px solid #c566;
+    box-shadow: 0px 6px 0 #b93c4d;
+    transition: all 0.1s ease;
+}
+
+button:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #b93c4d;
+}
+
+#pantalla-juego {
+    display: none;
+}
+
+.pregunta-actual {
+    background-color: black !important;
+    color: white !important;
+}
+
+.bien-respondida {
+    background-color: rgb(67, 176, 80) !important;
+    color: white !important;
+}
+
+.mal-respondida {
+    background-color: rgb(179, 36, 36) !important;
+    color: white !important;
+}
+
+.conte-pregu {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    max-width: 700px;
+    min-height: 220px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0 20px 20px;
+}
+
+.botones {
+    margin-top: 6px;
+}
+
+.conte-pregu #pregunta {
+    margin: 0;
+    font-weight: normal;
+}
+
+.conte-pregu input {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    width: 60%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    border: 2px solid #ccc;
+}
+
+.conte-pregu #letra-pregu {
+    border: 2px solid black;
+    display: inline-block;
+    color: black;
+    padding: 5px 10px;
+    font-size: 30px;
+    position: relative;
+    bottom: 25px;
+    background: white;
+}
+
+.container {
+    position: relative;
+    width: 255px;
+    height: 255px;
+    margin: 50px auto;
+    border: 2px solid black;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container #tiempo {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    background: white;
+    color: #5972d9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#pantalla-final {
+    display: none;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#pantalla-final span {
+    background: black;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
