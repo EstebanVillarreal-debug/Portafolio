@@ -1,0 +1,312 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/*este es el link que da forma a los controles (no c que vercion tenga ni nada mas pero funciona aun)*/
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+/*url de la fuente*/
+
+/*esto es una variable en css*/
+:root {
+    --blanco: rgba(228, 228, 228, 1)
+}
+
+:root {
+    --negro: rgba(0, 0, 0, 1)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Audiowide", sans-serif;
+}
+
+/*escoger en el tipo de fuente esta parte que diga family*/
+
+body {
+    display: flex;
+    justify-content: center;
+    /*con esto la imagen se ajusta a la ventana*/
+    min-height: 100vh;
+    align-items: center;
+    width: 100%;
+
+
+    background: url(img/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*siguiente linea hace difuminado a la imagen*/
+    backdrop-filter: blur(6px);
+    /*siguiente linea hace que el difuminado funcione en los distintos exploradores*/
+    -webkit-backdrop-filter: blur(6px);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    /*siguiente linea oscurece el fondo las primeras 3 son el codigo del color y el ultimo es el grado de intencidad*/
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+body>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+/*Se cambio el tamaño del reproductor para que cupiera la imagen*/
+.Reproductor-musica {
+    /*nuevo*/
+    position: relative;
+    /* necesario no tocar*/
+    overflow: visible;
+    /*permite elementos fuera del contenedor*/
+    width: 420px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color: rgba(228, 228, 228, 0.1);
+    /*antiguo*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*selecciona la variable*/
+    color: var(--blanco);
+}
+
+.selector-archivos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 260px;
+    position: absolute;
+    left: -500px;
+    top: -80px;
+    z-index: 60;
+}
+
+.selector {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.selector label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: rgba(165, 165, 165, 0.3);
+    padding: 8px 12px;
+    color: var(--blanco);
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    position: static;
+    /* elimina top/right que rompían el layout */
+}
+
+.selector input {
+    display: none;
+}
+
+/*fuera del cuadro*/
+.playlist {
+    position: absolute;
+    top: -30px;
+    left: -520px;
+    width: 300px;
+    background-color: rgba(165, 165, 165, 0.3);
+    padding: 12px;
+    border-radius: 20px;
+    z-index: 50;
+    max-height: 570px;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.playlist h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.playlist::-webkit-scrollbar {
+    width: 10px;
+}
+
+.playlist::-webkit-scrollbar-track {
+    /*Color provisional de la barra de la playlist*/
+    background: rgb(117, 121, 96);
+    border-radius: 3px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background: rgba(1, 14, 7, 0.2);
+    border-radius: 3px;
+}
+
+.playlist::-webkit-scrollbar-thumb:hover {
+    background: rgba(1, 14, 7, 0.2);
+}
+
+#playlist-container {
+    list-style: none;
+}
+
+#playlist-container li {
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 10px;
+    background-color: rgba(189, 204, 200, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#playlist-container li:hover {
+    background-color: rgba(189, 204, 200, 0.4);
+}
+
+#playlist-container li.active {
+    background-color: rgba(189, 204, 200, 0.5);
+    font-weight: bold;
+}
+
+.Reproductor-musica h1 {
+    /*tamaño del titulo*/
+    font-size: 1.5rem;
+    font-weight: 600;
+    /*espacio entre el titulo y el nombre*/
+    line-height: 1.6;
+}
+
+.Reproductor-musica p {
+    /*tamaño del titulo*/
+    font-size: 1rem;
+    font-weight: 400;
+    /*opacidad*/
+    opacity: 0.6;
+}
+
+/*se coloca un # pq es un id*/
+#progreso {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    background: rgba(165, 165, 165, 0.4);
+    border-radius: 4px;
+    margin: 32px 0 24px;
+    cursor: pointer;
+}
+
+/*apariencia de la bola*/
+#progreso::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 0, 0, 0.9);
+    /*tamaño*/
+    width: 12px;
+    aspect-ratio: 1/1;
+    border-radius: 60%;
+    outline: 4px solid var(--blanco);
+    box-shadow: 0 6px 10px rgba(255, 0, 0, 0.3);
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+}
+
+.controles button {
+    width: 45px;
+    aspect-ratio: 1/1;
+    border-radius: 60%;
+    margin: 10px;
+    background: rgba(165, 165, 165, 0.3);
+    color: var(--blanco);
+    border: 2px solid var(--negro);
+    outline: 0;
+    font-size: 1.5rem;
+    box-shadow: 0 6px 10px rgba(228, 228, 228, 0.3);
+    cursor: pointer;
+    /*esto mete tiempo en las transicion de los iconos */
+    transition: all 0.1s linear;
+}
+
+/*agranda iconos al oprimir los botones*/
+.controles .control:hover {
+    transform: scale(1.1);
+}
+
+.controles .iconControl:hover {
+    transform: scale(1.2);
+}
+
+.controles .aleatorio.active {
+    background-color: rgba(165, 165, 165, 0.6);
+}
+
+.controles .aleatorio.active {
+    background-color: rgba(165, 165, 165, 0.6);
+}
+
+/*vista movil (en proceso...)*/
+
+@media (max-width: 700px) {
+    .selector-archivos {
+        position: static;
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .playlist {
+        position: static;
+        width: 100%;
+        transform: none;
+        left: auto;
+        top: auto;
+        margin-top: 12px;
+    }
+
+    .Reproductor-musica {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+}
+
+/*Ajusta la imagen de fondo*/
+body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/*imagen de la cancion*/
+#cover-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#cover {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#cover-icon {
+    font-size: 120px;
+    color: white;
+}

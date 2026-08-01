@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(11, 10, 34);
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {color: rgb(190, 44, 100);
+text-align: center;}
+
+h2 {
+    color: rgb(10, 165, 30);
+}
+
+ul {
+    color: aqua;
+}

@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(11, 10, 34);
+    font-family: Arial, sans-serif;
+}
+
+.tarjeta-perfil {
+    background-color: rgb(25, 23, 71);
+    width: 60%;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgb(255, 255, 255);
+}
+
+h1 {
+    color: #b4270e;
+    text-align: center;
+}
+
+.foto-perfil {
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #00b34b;
+}
+
+.subtitulo-especial {
+    color: rgb(252, 252, 252);
+    text-decoration: underline;
+}
+
+h2 {color: aliceblue;}
+
+p {color: aliceblue;}
+
+ul {color: aliceblue;}
+
+button {background-color: #00b34b;
+color: aliceblue;}

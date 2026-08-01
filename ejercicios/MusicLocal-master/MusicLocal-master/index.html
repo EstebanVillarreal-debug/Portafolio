@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music/Locate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/file-earmark-music.svg" type="image/x-icon">
+</head>
+
+<body>
+    <section class="Reproductor-musica">
+
+        <div class="selector-archivos">
+            <div class="selector selector-musica">
+                <label for="musica-input">Playlits</label>
+                <input id="musica-input" type="file" multiple accept="audio/*">
+            </div>
+            <div class="selector selector-fondo">
+                <label for="fondo-input">Fondo</label>
+                <input id="fondo-input" type="file" accept="image/*">
+            </div>
+        </div>
+
+        <div class="playlist">
+            <h2>Mi Playlist</h2>
+            <ul id="playlist-container">
+                <li>Agrega tus canciones</li>
+            </ul>
+        </div>
+
+        <!-- imagen de la canción -->
+        <div id="cover-container">
+            <img id="cover" alt="" style="display:none;">
+            <i id="cover-icon" class="bi bi-music-note-beamed" style="font-size:120px; color:white;"></i>
+        </div>
+
+        <h1>Titulo</h1>
+        <p>Nombre</p>
+        <audio id="cancion" preload="auto">
+            <source src="" type="audio/mpeg" />
+
+        </audio>
+        <!--esto es la barra reproduccion-->
+        <input type="range" value="0" id="progreso" />
+        <div class="controles">
+            <button class="aleatorio control">
+                <!--❮❮ flechas como posible cambio por si quiero ya no usar el link-->
+                <i class="bi bi-shuffle" id="iconoaleatorio"></i>
+            </button>
+            <button class="atras control">
+                <!--❮❮ flechas como posible cambio por si quiero ya no usar el link-->
+                <i class="bi bi-arrow-left-short"></i>
+            </button>
+            <button class="boton-reproducir-pausar iconControl">
+                <!--❚❚ icono por si no quiero usar el link-->
+                <i class="bi bi-play-fill" id="iconControl"></i>
+            </button>
+            <button class="siguiente control">
+                <!--❯❯ flechas como popsible cambio por si quiero ya no usar el link-->
+                <i class="bi bi-arrow-right-short"></i>
+            </button>
+            <button class="repetir control">
+                <!--❮❮ flechas como posible cambio por si quiero ya no usar el link-->
+                <i class="bi bi-arrow-repeat" id="iconorepetir"></i>
+            </button>
+        </div>
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.5/dist/jsmediatags.min.js"></script>
+    <!--lee la caratura de la canción-->
+    <script src="script.js"></script>
+</body>
+
+</html>
