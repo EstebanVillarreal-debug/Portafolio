@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gea</title>
+</head>
+<body>
+
+    <!-- Zona de Landing -->
+
+    <div class="landing">
+        <div class="titulo">
+            <h1>GEA</h1>
+            <p>Gestion Estudiantil Avanzada</p>
+        </div>
+
+        <div class="info-somos">
+            <h2>Que somos?</h2>
+            <p>Es un aplicativo web disenado para la gestion academica de las escuelas, colegios y universidades.</p>
+        </div>
+
+        <img class="img-logo" src="img/logo.png" alt="Logo GEA">
+
+        <div class="info-funcion">
+            <h2>Cual es nuestra funcion?</h2>
+            <p>Nosotros gestionamos y centralizamos informacion sobre los estudiantes, docentes y directivos de una institucion de manera facil y segura.</p>
+        </div>
+
+        <div class="info-mision">
+            <h2>Mision</h2>
+            <p>Brindar una plataforma eficiente que facilita la gestion academica y administrativa, mejorando la organizacion y el acceso a la informacion.</p>
+        </div>
+
+        <div class="info-vision">
+            <h2>Vision</h2>
+            <p>Ser el sistema lider en gestion educativa reconocida por su innovacion, seguridad y facilidad de uso en instituciones economicas.</p>
+        </div>
+
+        <div class="info-chamba">
+            <h2>¿Con quien nos asociamos?</h2>
+            <p>Nos asociamos con el colegio Isamel Perdomo Borrero de Gigante-Huila aún así, van a ver más escuelas, colegios y universidades que se agreguen a este espacio de trabajo.</p>
+        </div>
+
+        <img class="img-directivos" src="img/escudo.png" alt="">
+
+        <div class="mapa">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1236.6505624504832!2d-75.54376479540512!3d2.3895674219398995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b2d4ec43a0551%3A0x6d17875512a29c7a!2sColegio%20Nacional%20Ismael%20Perdomo%20Borrero!5e1!3m2!1ses!2sco!4v1779912730169!5m2!1ses!2sco" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="info-creditos">
+            <div class="creditos-lista">
+                <div class="credito-grupo">
+                    <h3>Institucion Aliada</h3>
+                    <ul>
+                        <li>Colegio Nacional Ismael Perdomo Borrero</li>
+                        <li>Gigante, Huila</li>
+                    </ul>
+                </div>
+
+                <div class="credito-grupo">
+                    <h3>Proyecto</h3>
+                    <p>GEA - Gestion Estudiantil Avanzada</p>
+                    <p><a href="#" class="credito-link"><i class="fa-solid fa-envelope"></i> Correo oficial de GEA</a></p>
+                    <p>Plataforma digital enfocada en la gestion academica y administrativa.</p>
+                </div>
+
+                <div class="credito-grupo">
+                    <h3>Tecnologias Utilizadas</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+
+                <div class="credito-grupo">
+                    <h3>Version y Año</h3>
+                    <ul>
+                        <li>Version Beta</li>
+                        <li>2026</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-desarrollo">
+            <div class="creditos-lista">
+                <div class="credito-grupo">
+                    <h3>Desarrollado por</h3>
+                    <div class="personas-creditos">
+                        <a href="https://github.com/EstebanVillarreal-debug" class="persona-credito" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            <span>Juan Esteban Villarreal Ramirez</span>
+                        </a>
+
+                        <a href="https://github.com/sgchavarro" class="persona-credito" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            <span>Samuel Gerardo Chavarro</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="credito-grupo">
+                    <h3>Acompañamiento</h3>
+                    <div class="personas-creditos">
+                        <!-- el target="_blank" es para que lo mande a otra pagina y no quite la pagina principal -->
+                        <a href="https://github.com/hdtoledo" class="persona-credito"  target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            <span>Hector David Toledo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ingresar">
+            <button class="btn-ingresar">Ingresa ahora</button>
+        </div>
+    </div>
+
+    <!-- Zona de inicio de sesion -->
+
+    <div class="login">
+
+        <img class="escudo" src="img/escudo.png" alt="Logo">
+
+        <label>Correo</label>
+        <input class="correo" type="email">
+
+        <label>Contraseña</label>
+        <!-- el type password hace poner los puntos -->
+        <input class="contrasena" type="password">
+
+        <button class="entrar">Ingresar</button>
+
+            <button class="volver">Volver al Inicio</button>
+
+        <div class="erorcontrasena">
+            <h1> &#9888; Error:</h1>
+            <h3>Correo o Contraseña incorrectos</h3>
+        </div>
+
+    </div>
+
+    <!-- Zona Admin -->
+
+    <div class="homeadmin">
+
+        <div class="home-contenido">
+            <div class="barra-inicio">
+                <img class="foto-usuario" src="img/usuario.png" alt="Usuario">
+                <div class="inicio">IPB</div>
+                <img class="escudo-home" src="img/Imagen.png" alt="Escudo">
+            </div>
+
+            <div class="datos-home">
+                <div class="bienvenido">Bienvenido
+                    <span id="usuario"></span>
+                </div>
+                <div class="Fecha">Fecha y Hora:
+                    <span id="fecha"></span>
+                </div>
+            </div>
+
+            <div class="linea-home"></div>
+
+            <div class="menu-home">
+                <button class="noticias">Noticias</button>
+                <button class="registros">Registros</button>
+                <button class="reportes">Reportes</button>
+                <button class="Docentes">Docentes</button>
+                <button class="Calendario">Calendario</button>
+            </div>
+
+            <button class="cerrar-sesion">Cerrar sesion</button>
+        </div>
+
+    </div>
+
+    <!-- Zona Docentes -->
+
+    <div class="homedocentes">
+
+        <div class="home-contenido">
+            <div class="barra-inicio">
+                <img class="foto-usuario" src="img/logo.png" alt="Usuario">
+                <div class="inicio">IPB</div>
+                <img class="escudo-home" src="img/escudo.png" alt="Escudo">
+            </div>
+
+            <div class="datos-home">
+                <div class="bienvenido">Bienvenido
+                    <span id="usuario"></span>
+                </div>
+                <div class="Fecha">Fecha y Hora:
+                    <span id="fecha"></span>
+                </div>
+            </div>
+
+            <div class="linea-home"></div>
+
+            <div class="menu-home menu-docentes">
+                <button class="noticias">Noticias</button>
+                <button class="reportes">Reportes</button>
+                <button class="Docentes">Docentes</button>
+                <button class="Calendario">Calendario</button>
+            </div>
+
+            <button class="cerrar-sesion">Cerrar sesion</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
