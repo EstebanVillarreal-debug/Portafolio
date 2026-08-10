@@ -20,13 +20,15 @@
 
 ## Estructura del proyecto
 
+```text
 Portafolio/
-- ├──📂ejercicios 
-- ├──📂img
-- ├── index.html
-- ├── css
-- ├── js
-- ├──README.MD
+├──📂ejercicios 
+├──📂img
+├── index.html
+├── css
+├── js
+└──README.MD
+```
 
 ## Vista previa
 

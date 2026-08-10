@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/png" href="#">
+    <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="style.css">
     <title>Portafolio</title>
 </head>
@@ -51,9 +51,9 @@
                     <i class="fa-brands fa-facebook-f"></i>
                     <span>Facebook</span>
                 </a>
-                <a class="twitter" href="https://discord.com/" target="_blank">
-                    <i class="fa-brands fa-discord"></i>
-                    <span>Discord</span>
+                <a class="gmail" href="mailto:juanevr2007@gmail.com" target="_blank">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Gmail</span>
                 </a>
                 <a class="instagram" href="https://www.instagram.com/juan.villarreal2/" target="_blank">
                     <i class="fa-brands fa-instagram"></i>
@@ -380,11 +380,17 @@
             <p><span>En esta sección encontrarás todos los ejercicios, actividades y proyectos que he desarrollado y
                     entregado durante mi proceso de formación, así como trabajos realizados de manera independiente para
                     fortalecer mis habilidades en desarrollo web.</span></p>
-            <div class="nomolestes">
+            <div class="filtros">
+                <button class="filtro-btn activo" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="ejer">Ejercicios</button>
+                <button class="filtro-btn" data-filtro="proy">Proyectos</button>
+                <span class="contador-proyectos"></span>
+            </div>
+            <div class="nomolestes" data-seccion="ejer">
                 <h3>Ejercicios</h3>
             </div>
             <div class="galeria">
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actidiad html, css, js/Introduccion html/esqueleto-jjk/miperfil2.html"
                         target="_blank">
                         <img src="img/ejer1.png" alt="">
@@ -394,7 +400,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividad Botón/Actividad Botón/JS/index.html" target="_blank">
                         <img src="img/ejer2.png" alt="">
                         <div class="overlay">
@@ -403,7 +409,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Contador +,-/Boton +,-/boton.html" target="_blank">
                         <img src="img/ejer3.png" alt="">
                         <div class="overlay">
@@ -412,7 +418,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/004-Dom_Carro/index.html" target="_blank">
                         <img src="img/ejer4.png" alt="">
                         <div class="overlay">
@@ -421,7 +427,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/005-DOM-CursorAnimado/index.html" target="_blank">
                         <img src="img/ejer5.png" alt="">
                         <div class="overlay">
@@ -430,7 +436,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/006-DOM-Cronometro/index.html" target="_blank">
                         <img src="img/ejer6.png" alt="">
                         <div class="overlay">
@@ -439,7 +445,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/007-DOM-Carrusel/index.html" target="_blank">
                         <img src="img/ejer7.png" alt="">
                         <div class="overlay">
@@ -448,7 +454,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/008-DOM-Galeria3D/index.html" target="_blank">
                         <img src="img/ejer8.png" alt="">
                         <div class="overlay">
@@ -457,7 +463,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/009-DOM-Mensaje/index.html" target="_blank">
                         <img src="img/ejer9.png" alt="">
                         <div class="overlay">
@@ -466,7 +472,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/010-DOM-Bateria/index.html" target="_blank">
                         <img src="img/ejer10.png" alt="">
                         <div class="overlay">
@@ -475,7 +481,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/011-DOM-Calculadora/" target="_blank">
                         <img src="img/ejer11.png" alt="">
                         <div class="overlay">
@@ -484,7 +490,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Actividades del 004 - 012/012-DOM-ListaTareas/index.html" target="_blank">
                         <img src="img/ejer12.png" alt="">
                         <div class="overlay">
@@ -493,7 +499,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/Pasapalabra/Pasapalabra/index.html" target="_blank">
                         <img src="img/ejer13.png" alt="">
                         <div class="overlay">
@@ -502,7 +508,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/API_introduccion/API_introduccion/index.html" target="_blank">
                         <img src="img/ejer14.png" alt="">
                         <div class="overlay">
@@ -511,7 +517,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/API_Paises/API_Paises/index.html" target="_blank">
                         <img src="img/ejer15.png" alt="">
                         <div class="overlay">
@@ -520,7 +526,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="ejer">
                     <a href="../ejercicios/API-Peliculas/API-Peliculas/index.html" target="_blank">
                         <img src="img/ejer16.png" alt="">
                         <div class="overlay">
@@ -530,11 +536,11 @@
                     </a>
                 </div>
             </div>
-            <div class="nomolestes">
+            <div class="nomolestes" data-seccion="proy">
                 <h3>Proyectos</h3>
             </div>
             <div class="galeria">
-                <div class="proyecto">
+                <div class="proyecto" data-categoria="proy">
                     <a href="../ejercicios/MusicLocal-master/MusicLocal-master/index.html" target="_blank">
                         <img src="img/pro1.png" alt="">
                         <div class="overlay">
@@ -543,7 +549,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto"data-categoria="proy">
                     <a href="../ejercicios/Gea (Prueba)/index.html" target="_blank">
                         <img src="img/pro2.png" alt="">
                         <div class="overlay">
@@ -552,7 +558,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="proyecto">
+                <div class="proyecto"data-categoria="proy">
                     <a href="../Portafolio-master/ejercicios/Fondos/python.py" target="_blank">
                         <img src="img/pro3.png" alt="">
                         <div class="overlay">
@@ -616,11 +622,16 @@
         <div class="redes">
             <a class="facebook" href="https://www.facebook.com/juanesteban.villarrealramirez" target="_blank"><i
                     class="fa-brands fa-facebook-f"></i></a>
-            <a class="twitter" href="https://discord.com/" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            <a class="gmail" href="mailto:juanevr2007@gmail.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i></a>
             <a class="instagram" href="https://www.instagram.com/juan.villarreal2/" target="_blank"><i
                     class="fa-brands fa-instagram"></i></a>
             <a class="linkedin" href="https://www.linkedin.com/in/juan-esteban-villarreal-ram%C3%ADrez-725ab4377/"
                 target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="copyrite">
+            <h4>© 2026 Juan Esteban Villarreal Ramírez · Portafolio Académico</h4>
         </div>
     </footer>
 

@@ -266,9 +266,9 @@ section {
     width: 230px;
 }
 
-.inicio .container-banner .redes .twitter:hover {
-    background: linear-gradient(40deg, #101b31, rgb(16, 16, 233));
-    border-color: rgb(16, 16, 233);
+.inicio .container-banner .redes .gmail:hover {
+    background: linear-gradient(90deg, #EA4335, #4285F4);
+    border-color: rgb(255, 255, 255);
     width: 150px;
 }
 
@@ -839,6 +839,81 @@ section {
     margin-bottom: 0px;
 }
 
+.portafolio .filtros {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 auto 35px;
+    max-width: 1100px;
+}
+
+.portafolio .filtro-btn {
+    background-color: #252a2e;
+    color: #fff;
+    border: 1px solid #af8613;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.portafolio .filtro-btn:hover {
+    border-color: #caa53d;
+    color: #caa53d;
+}
+
+.portafolio .filtro-btn.activo {
+    background-color: #caa53d;
+    color: #011927;
+    border-color: #caa53d;
+    font-weight: bold;
+}
+
+.portafolio .contador-proyectos {
+    margin-left: auto;
+    color: #af8613;
+    font-size: 15px;
+}
+
+.portafolio .proyecto.oculto {
+    display: none;
+}
+
+.portafolio .galeria .proyecto {
+    animation: apareceProyecto .6s ease both;
+}
+
+@keyframes apareceProyecto {
+    from { opacity: 0; transform: translateY(30px) scale(.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* efecto escalonado, como el "interval" de ScrollReveal */
+.portafolio .galeria .proyecto:nth-child(1) { animation-delay: 0s; }
+.portafolio .galeria .proyecto:nth-child(2) { animation-delay: .08s; }
+.portafolio .galeria .proyecto:nth-child(3) { animation-delay: .16s; }
+.portafolio .galeria .proyecto:nth-child(4) { animation-delay: .24s; }
+.portafolio .galeria .proyecto:nth-child(5) { animation-delay: .32s; }
+.portafolio .galeria .proyecto:nth-child(6) { animation-delay: .4s; }
+.portafolio .galeria .proyecto:nth-child(7) { animation-delay: .48s; }
+.portafolio .galeria .proyecto:nth-child(8) { animation-delay: .56s; }
+
+.portafolio .nomolestes.oculto {
+    display: none;
+}
+
+.portafolio .nomolestes h3 {
+    animation: apareceTitulo .6s ease both;
+}
+
+@keyframes apareceTitulo {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
 .contacto {
     background-image: linear-gradient(rgba(30, 33, 38, 0.7), rgba(30, 35, 38, 0.9)),
     url(img/fondo1.jpg);
@@ -1003,8 +1078,8 @@ footer {
 }
 
 footer .redes {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-top: 55px;
 }
 
 footer .redes a{
@@ -1016,7 +1091,7 @@ footer .redes a{
     width: 42px;
     height: 42px;
     line-height: 42px;
-    margin: 40px 5px;
+    margin: 0 5px;
     font-size: 20px;
     transition: 0.3s;
 }
@@ -1026,9 +1101,9 @@ footer .redes .facebook:hover {
     border-color: #1466d1;
 }
 
-footer .redes .twitter:hover {
-    background-color: #1da1f2;
-    border-color: #1da1f2;
+footer .redes .gmail:hover {
+    background-color: #EA4335;
+    border-color: #EA4335;
 }
 
 footer .redes .instagram:hover {
@@ -1054,6 +1129,14 @@ footer .arriba {
     border-radius: 50%;
     line-height: 50px;
     font-size: 18px;
+}
+
+footer .copyrite {
+    padding: -50px 0px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 50px;
 }
 
 @media screen and (max-width:980px) {

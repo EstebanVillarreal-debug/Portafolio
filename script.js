@@ -1,5 +1,5 @@
 let menuvisible = false;
-function mostrarocultarmenu(){
+function mostrarocultarmenu() {
     if (menuvisible) {
         document.getElementById("nav").classList = "";
         menuvisible = false;
@@ -57,6 +57,51 @@ if (formularioContacto && mensajeEnvio) {
     });
 }
 
+// para la hoja de vida
+function descargarCV() {
+    const enlace = document.createElement("a");
+    enlace.href = "../Portafolio-master/documentos/Hoja de Vida Esteban Villarreal.pdf";
+    enlace.download = "CV-Esteban-Villarreal.pdf";
+    enlace.click();
+}
+
+// para los filtros
+
+const botonesFiltro = document.querySelectorAll(".filtro-btn");
+const proyectosGaleria = document.querySelectorAll(".portafolio .proyecto");
+const encabezadosSeccion = document.querySelectorAll(".portafolio .nomolestes");
+const contadorProyectos = document.querySelector(".contador-proyectos");
+
+function aplicarFiltro(categoria) {
+    let visibles = 0;
+
+    proyectosGaleria.forEach((proyecto) => {
+        const coincide = categoria === "todos" || proyecto.dataset.categoria === categoria;
+        proyecto.classList.toggle("oculto", !coincide);
+        if (coincide) visibles++;
+    });
+
+    encabezadosSeccion.forEach((encabezado) => {
+        const esDeEstaSeccion = categoria === "todos" || encabezado.dataset.seccion === categoria;
+        encabezado.classList.toggle("oculto", !esDeEstaSeccion);
+    });
+
+    if (contadorProyectos) {
+        contadorProyectos.textContent = `${visibles} proyecto${visibles === 1 ? "" : "s"}`;
+    }
+}
+
+botonesFiltro.forEach((boton) => {
+    boton.addEventListener("click", () => {
+        botonesFiltro.forEach((b) => b.classList.remove("activo"));
+        boton.classList.add("activo");
+        aplicarFiltro(boton.dataset.filtro);
+    });
+});
+
+aplicarFiltro("todos");
+
+// para los skills
 function efectobarra() {
     var skills = document.getElementById("skills");
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
@@ -75,122 +120,113 @@ function efectobarra() {
     }
 }
 
-window.onscroll = function(){
+window.onscroll = function () {
     efectobarra();
 }
 
-if ((window.matchMedia("(min-width: 701px)").matches)) {
-// Base del scroll
-ScrollReveal({
-    distance: '60px',
-    duration: 1000,
-    reset: false
-});
+if (typeof ScrollReveal !== "undefined") {
+    const esCelular = window.matchMedia("(max-width: 700px)").matches;
 
-// sobre mi scroll
-ScrollReveal().reveal('.sobremi h2',{
-    origin:'top'
-});
+    // Base del scroll
+    ScrollReveal({
+        distance: esCelular ? '38px' : '60px',
+        duration: esCelular ? 700 : 1000,
+        easing: 'cubic-bezier(0.2, 0.65, 0.3, 1)',
+        reset: false,
+        viewFactor: esCelular ? 0.18 : 0
+    });
 
-ScrollReveal().reveal('.sobremi p',{
-    origin:'left'
-});
+    // sobre mi scroll
+    ScrollReveal().reveal('.sobremi h2', {
+        origin: 'top'
+    });
 
-ScrollReveal().reveal('.sobremi .col',{
-    origin:'right'
-});
+    ScrollReveal().reveal('.sobremi p', {
+        origin: 'left'
+    });
 
-ScrollReveal().reveal('.Intereses',{
-    origin:'bottom',
-    interval:100
-});
+    ScrollReveal().reveal('.sobremi .col', {
+        origin: 'right'
+    });
 
-//  skills scroll
+    ScrollReveal().reveal('.Intereses', {
+        origin: 'bottom',
+        interval: 100
+    });
 
-ScrollReveal().reveal('.skills h2',{
-    origin:'top'
-});
+    //  skills scroll
 
-ScrollReveal().reveal('.skills .col',{
-    origin:'left',
-    interval:200
-});
+    ScrollReveal().reveal('.skills h2', {
+        origin: 'top'
+    });
 
-ScrollReveal().reveal('.skills .skill',{
-    origin:'right',
-    interval:150
-});
+    ScrollReveal().reveal('.skills .col', {
+        origin: 'left',
+        interval: 200
+    });
 
-// curriculum scroll
-ScrollReveal().reveal('.curriculum h2',{
-    origin:'top'
-});
+    ScrollReveal().reveal('.skills .skill', {
+        origin: 'right',
+        interval: 150
+    });
 
-ScrollReveal().reveal('.curriculum .izquierda',{
-    origin:'left'
-});
+    // curriculum scroll
+    ScrollReveal().reveal('.curriculum h2', {
+        origin: 'top'
+    });
 
-ScrollReveal().reveal('.curriculum .derecha',{
-    origin:'right'
-});
+    ScrollReveal().reveal('.curriculum .izquierda', {
+        origin: 'left'
+    });
 
-ScrollReveal().reveal('.curriculum .item',{
-    distance:'80px',
-    interval:200
-});
+    ScrollReveal().reveal('.curriculum .derecha', {
+        origin: 'right'
+    });
 
-// portafolio scroll
-ScrollReveal().reveal('.portafolio h2',{
-    origin:'top',
-});
+    ScrollReveal().reveal('.curriculum .item', {
+        distance: '80px',
+        interval: 200
+    });
 
-ScrollReveal().reveal('.portafolio h3',{
-    origin:'right',
-});
+    // portafolio scroll
+    ScrollReveal().reveal('.portafolio h2', {
+        origin: 'top',
+    });
 
-ScrollReveal().reveal('.portafolio p',{
-    origin:'left',
-});
+    ScrollReveal().reveal('.portafolio p', {
+        origin: 'left',
+    });
 
-ScrollReveal().reveal('.portafolio .galeria .proyecto',{
-    origin:'bottom',
-    interval:150,
-    scale:0.9,
-    viewOffset: {
-        bottom: 150
-    }
-});
+    // contacto scroll
+    ScrollReveal().reveal('.contacto h2', {
+        origin: 'top'
+    });
 
-// contacto scroll
-ScrollReveal().reveal('.contacto h2',{
-    origin:'top'
-});
+    ScrollReveal().reveal('.contacto .col:first-child', {
+        origin: 'left'
+    });
 
-ScrollReveal().reveal('.contacto .col:first-child',{
-    origin:'left'
-});
+    ScrollReveal().reveal('.contacto .col:last-child', {
+        origin: 'right'
+    });
 
-ScrollReveal().reveal('.contacto .col:last-child',{
-    origin:'right'
-});
+    ScrollReveal().reveal('.contacto form input', {
+        origin: 'left',
+        interval: 100
+    });
 
-ScrollReveal().reveal('.contacto form input',{
-    origin:'left',
-    interval:100
-});
+    ScrollReveal().reveal('.contacto textarea', {
+        origin: 'bottom'
+    });
 
-ScrollReveal().reveal('.contacto textarea',{
-    origin:'bottom'
-});
+    ScrollReveal().reveal('.contacto button', {
+        origin: 'bottom',
+        delay: 300
+    });
 
-ScrollReveal().reveal('.contacto button',{
-    origin:'bottom',
-    delay:300
-});
-
-// footer scroll
-ScrollReveal().reveal('footer',{
-    origin:'bottom'
-});
+    // footer scroll
+    ScrollReveal().reveal('footer', {
+        origin: 'bottom'
+    });
 
 }
