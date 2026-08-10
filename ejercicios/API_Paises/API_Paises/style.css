@@ -18,6 +18,12 @@ body {
 }
 
 .container {
+/* arreglar izquierdazo */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
     width: 500px;
     min-height: 150px;
     padding: 20px;

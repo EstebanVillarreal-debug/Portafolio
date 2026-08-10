@@ -14,6 +14,49 @@ function seleccionar() {
     menuvisible = false;
 }
 
+// al darle a un interés se alterna la clase "activo" y se cierran cuando le dan a otro.
+document.querySelectorAll(".Intereses").forEach((interes) => {
+    interes.addEventListener("click", () => {
+        document.querySelectorAll(".Intereses").forEach((otro) => {
+            if (otro !== interes) otro.classList.remove("activo");
+        });
+        interes.classList.toggle("activo");
+    });
+});
+
+// Busca el formulario y el espacio donde mostraré la confirmación.
+const formularioContacto = document.getElementById("form-contacto");
+const mensajeEnvio = document.getElementById("mensaje-envio");
+let temporizadorMensajeEnvio;
+
+if (formularioContacto && mensajeEnvio) {
+    // Escucha el envío para controlar lo que ocurre al presionar el botón.
+    formularioContacto.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        const campos = formularioContacto.querySelectorAll("input, textarea");
+        // Recorre cada campo con every para confirmar que ninguno esté vacío y que cumpla sus validaciones.
+        const estanCompletos = [...campos].every((campo) => campo.value.trim() !== "" && campo.checkValidity());
+
+        // Verifica que todos los campos estén completos y sean válidos.
+        if (!estanCompletos) {
+            formularioContacto.reportValidity();
+            return;
+        }
+
+        mensajeEnvio.textContent = "¡El mensaje se envió correctamente!";
+        mensajeEnvio.classList.add("mostrar");
+        formularioContacto.reset();
+
+        // Reinicia el tiempo y oculta el mensaje después de seis segundos.
+        clearTimeout(temporizadorMensajeEnvio);
+        temporizadorMensajeEnvio = setTimeout(() => {
+            mensajeEnvio.classList.remove("mostrar");
+            mensajeEnvio.textContent = "";
+        }, 6000);
+    });
+}
+
 function efectobarra() {
     var skills = document.getElementById("skills");
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;

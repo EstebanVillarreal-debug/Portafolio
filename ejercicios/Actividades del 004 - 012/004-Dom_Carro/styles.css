@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
 * {
-font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-overflow-y: hidden;
-background-color: antiquewhite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    background-color: antiquewhite;
+
 }
 /* etiqueta producto */
 .tag {
@@ -37,6 +38,12 @@ background-color: antiquewhite;
     height: 80%;
     width: 30%;
     box-shadow: 10px 10px 25px 0px #254e24;
+    position: fixed;
+
+    /* arregla el dezplazamiento a la izquierda */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .product-image {

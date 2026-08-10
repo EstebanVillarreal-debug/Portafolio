@@ -61,7 +61,10 @@ body>* {
 /*Se cambio el tamaño del reproductor para que cupiera la imagen*/
 .Reproductor-musica {
     /*nuevo*/
-    position: relative;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     /* necesario no tocar*/
     overflow: visible;
     /*permite elementos fuera del contenedor*/

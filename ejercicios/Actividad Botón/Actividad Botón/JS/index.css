@@ -1,18 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 *{
-    font-family: "bebas neue"
+    font-family: "bebas neue";
+}
+
+html {
+    width: 100%;
+    height: 100%;
 }
 
 body{
-    height: 100vh;
+    margin: 0;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: hidden;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .btn{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     outline: none;
     border: none;
     text-transform: uppercase;
@@ -29,9 +41,6 @@ body{
 }
 
 .btn:active{
-    overflow: none;
-    position: relative;
-    top: 10px;
-    left: 2px;
+    transform: translate(-48%, -40%);
     box-shadow: none;
 }
