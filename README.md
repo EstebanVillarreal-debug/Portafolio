@@ -4,9 +4,9 @@
 
 ## Tecnologías utilizadas
 
-- HTML5 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-- CSS3 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-- JavaScript ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## Características
 
@@ -21,8 +21,7 @@
 ## Estructura del proyecto
 
 Portafolio/
-├──📂ejercicios
-├──📂img
+├──📂ejercicios ├──📂img
 ├── index.html
 ├── css
 ├── js
@@ -46,11 +45,11 @@ Este proyecto continuará evolucionando a medida que adquiera nuevos conocimient
 
 Algunos de mis objetivos son:
 
-- [ ] Mejorar continuamente el diseño y la experiencia de usuario.
-- [ ] Incorporar nuevos proyectos.
-- [ ] Implementar nuevas tecnologías.
-- [ ] Optimizar el rendimiento y accesibilidad.
-- [ ] Mantener el código limpio y organizado.
+- Mejorar continuamente el diseño y la experiencia de usuario.
+- Incorporar nuevos proyectos.
+- Implementar nuevas tecnologías.
+- Optimizar el rendimiento y accesibilidad.
+- Mantener el código limpio y organizado.
 
 ## Licencia
 
