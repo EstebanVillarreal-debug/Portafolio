@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Slab:wght@100..900&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
     margin: 0;
@@ -26,18 +26,19 @@ section {
     z-index: 99;
     backdrop-filter: blur(15px);
     background: rgba(1, 25, 39, 0.815);
-    transition:.4s;
+    transition: .4s;
     animation: menuEntrada .8s ease;
 }
 
-@keyframes menuEntrada{
-    from{
-        opacity:0;
-        transform:translateY(-80px);
+@keyframes menuEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -57,7 +58,7 @@ section {
     text-decoration: none;
 }
 
-.container-header header .logo a span{
+.container-header header .logo a span {
     background: linear-gradient(90deg, #d69f00 0%, #d69f00 40%, #ffffff 50%, #d69f00 60%, #d69f00 100%);
     background-size: 300% 100%;
     background-position: -300% 0;
@@ -67,11 +68,12 @@ section {
     animation: brillo 8s linear infinite;
 }
 
-@keyframes brillo{
-    0%{
+@keyframes brillo {
+    0% {
         background-position: 300% 0;
     }
-    100%{
+
+    100% {
         background-position: -300% 0;
     }
 }
@@ -81,18 +83,101 @@ section {
     list-style: none;
 }
 
-.container-header header nav ul li a {
-    text-align: none;
-    color: #fff;
-    margin: 0 15px;
-    padding: 3px;
-    transition: 0.5s;
-    text-decoration: none;
-    display: block;
+.container-header header ul {
+    gap: 10px;
 }
 
-.container-header header nav ul li a:hover {
-    color: #caa53d;
+.container-header header nav ul li a {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50px;
+    color: #fff;
+    background: #ffffff1a;
+    border: 1px solid transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.container-header header nav ul li a i {
+    min-width: 42px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.container-header header nav ul li a span {
+    padding-right: 16px;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translateX(10px);
+    transition: all 0.4s;
+}
+
+.container-header header nav ul li .home:hover {
+    width: 175px;
+    background-color: #caa53d;
+    border-color: #caa53d;
+    color: #011927;
+    width: 100px;
+}
+
+.container-header header nav ul li .sobre:hover {
+    width: 175px;
+    background-color: #caa53d;
+    border-color: #caa53d;
+    color: #011927;
+    width: 130px;
+}
+
+.container-header header nav ul li .habi:hover {
+    width: 175px;
+    background-color: #caa53d;
+    border-color: #caa53d;
+    color: #011927;
+    width: 100px;
+}
+
+.container-header header nav ul li .curro:hover {
+    width: 175px;
+    background-color: #caa53d;
+    border-color: #caa53d;
+    color: #011927;
+    width: 146px;
+}
+
+.container-header header nav ul li .portal:hover {
+    width: 175px;
+    background-color: #caa53d;
+    border-color: #caa53d;
+    color: #011927;
+    width: 135px;
+}
+
+.container-header header nav ul li .llama:hover {
+    width: 175px;
+    background-color: #caa53d;
+    border-color: #caa53d;
+    color: #011927;
+    width: 125px;
+}
+
+.container-header header nav ul li a:hover i {
+    color: #011927;
+}
+
+.container-header header nav ul li a:hover span {
+    opacity: 1;
+    width: auto;
+    transform: translateX(0);
 }
 
 .nav-responsive {
@@ -106,7 +191,7 @@ section {
 
 .inicio {
     background-image: linear-gradient(0deg, rgba(49, 48, 45, 0.719), rgba(56, 55, 49, 0.26)),
-    url(img/fondo1.jpg);
+        url(img/fondo1.jpg);
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: 110%;
@@ -117,12 +202,13 @@ section {
     animation: fondo 30s ease-in-out infinite alternate;
 }
 
-@keyframes fondo{
+@keyframes fondo {
 
-    0%{
+    0% {
         background-position: left center;
     }
-    100%{
+
+    100% {
         background-position: right center;
     }
 }
@@ -134,10 +220,10 @@ section {
     margin: auto;
     text-align: center;
     border-radius: 40px;
-        box-shadow:
+    box-shadow:
         0 0 5px #d4af37,
         0 0 5px #d4af37,
-        0 0 10px rgba(212,175,55,.5);
+        0 0 10px rgba(212, 175, 55, .5);
     animation: bannerEntrada 1s ease;
 }
 
@@ -190,7 +276,7 @@ section {
     font-weight: normal;
 }
 
-.inicio .container-banner h1, 
+.inicio .container-banner h1,
 .inicio .container-banner h2 {
     background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, #d69f00 50%, #ffffff 60%, #ffffff 100%);
     background-size: 300% 100%;
@@ -234,7 +320,7 @@ section {
     gap: 15px;
 }
 
-.inicio .container-banner .redes a i{
+.inicio .container-banner .redes a i {
     text-align: center;
     color: #fff;
     flex-shrink: 0;
@@ -244,7 +330,7 @@ section {
     margin-left: 10px;
 }
 
-.inicio .container-banner .redes a span{
+.inicio .container-banner .redes a span {
     margin-left: 10px;
     white-space: nowrap;
     opacity: 0;
@@ -267,7 +353,7 @@ section {
 }
 
 .inicio .container-banner .redes .gmail:hover {
-    background: linear-gradient(90deg, #EA4335, #4285F4);
+    background: linear-gradient(90deg, #db1806 0%, #4285F4 70%, #34A853 85%, #FBBC04 100%);
     border-color: rgb(255, 255, 255);
     width: 150px;
 }
@@ -299,7 +385,7 @@ section {
     font-size: 48px;
     font-family: 'Righteous';
     text-align: center;
-    padding: 20px 0; 
+    padding: 20px 0;
 }
 
 .sobremi .container-section p {
@@ -350,7 +436,7 @@ section {
 
 .sobremi .fila .col .container-intereses .Intereses .contenerdor-inter {
     position: absolute;
-    left:50%;
+    left: 50%;
     bottom: 115%;
     background-color: #252a2e;
     color: #fff;
@@ -373,8 +459,9 @@ section {
 }
 
 .sobremi .fila .col .container-intereses .Intereses
+
 /* poner con comas uno por uno despues: juego, fotos, etc... */
-{
+    {
     position: relative;
     width: 100px;
     height: 100px;
@@ -471,7 +558,7 @@ section {
     margin-bottom: 25px;
 }
 
-.skills .skill > span {
+.skills .skill>span {
     font-weight: bold;
     display: block;
     margin-bottom: 10px;
@@ -512,8 +599,13 @@ section {
 }
 
 @keyframes javascript {
-    0%{width: 0%;}
-    100%{width: 75%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
 }
 
 .skills .skill .htmlcss {
@@ -522,8 +614,13 @@ section {
 }
 
 @keyframes htmlcss {
-    0%{width: 0%;}
-    100%{width: 89%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 89%;
+    }
 }
 
 .skills .skill .htmlcss {
@@ -532,8 +629,13 @@ section {
 }
 
 @keyframes htmlcss {
-    0%{width: 0%;}
-    100%{width: 89%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 89%;
+    }
 }
 
 .skills .skill .photoshop {
@@ -542,8 +644,13 @@ section {
 }
 
 @keyframes photoshop {
-    0%{width: 0%;}
-    100%{width: 90%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
 }
 
 .skills .skill .wordpress {
@@ -552,8 +659,13 @@ section {
 }
 
 @keyframes wordpress {
-    0%{width: 0%;}
-    100%{width: 80%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
 }
 
 .skills .skill .react {
@@ -562,8 +674,13 @@ section {
 }
 
 @keyframes react {
-    0%{width: 0%;}
-    100%{width: 70%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
 }
 
 .skills .skill .comunicacion {
@@ -572,8 +689,13 @@ section {
 }
 
 @keyframes comunicacion {
-    0%{width: 0%;}
-    100%{width: 90%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
 }
 
 .skills .skill .equipo {
@@ -582,8 +704,13 @@ section {
 }
 
 @keyframes equipo {
-    0%{width: 0%;}
-    100%{width: 90%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
 }
 
 .skills .skill .creatividad {
@@ -592,8 +719,13 @@ section {
 }
 
 @keyframes creatividad {
-    0%{width: 0%;}
-    100%{width: 90%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
 }
 
 .skills .skill .dedicacion {
@@ -602,8 +734,13 @@ section {
 }
 
 @keyframes dedicacion {
-    0%{width: 0%;}
-    100%{width: 90%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
 }
 
 .skills .skill .proyect {
@@ -612,8 +749,13 @@ section {
 }
 
 @keyframes proyect {
-    0%{width: 0%;}
-    100%{width: 70%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
 }
 
 .curriculum {
@@ -887,19 +1029,49 @@ section {
 }
 
 @keyframes apareceProyecto {
-    from { opacity: 0; transform: translateY(30px) scale(.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* efecto escalonado, como el "interval" de ScrollReveal */
-.portafolio .galeria .proyecto:nth-child(1) { animation-delay: 0s; }
-.portafolio .galeria .proyecto:nth-child(2) { animation-delay: .08s; }
-.portafolio .galeria .proyecto:nth-child(3) { animation-delay: .16s; }
-.portafolio .galeria .proyecto:nth-child(4) { animation-delay: .24s; }
-.portafolio .galeria .proyecto:nth-child(5) { animation-delay: .32s; }
-.portafolio .galeria .proyecto:nth-child(6) { animation-delay: .4s; }
-.portafolio .galeria .proyecto:nth-child(7) { animation-delay: .48s; }
-.portafolio .galeria .proyecto:nth-child(8) { animation-delay: .56s; }
+.portafolio .galeria .proyecto:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.portafolio .galeria .proyecto:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.portafolio .galeria .proyecto:nth-child(3) {
+    animation-delay: .16s;
+}
+
+.portafolio .galeria .proyecto:nth-child(4) {
+    animation-delay: .24s;
+}
+
+.portafolio .galeria .proyecto:nth-child(5) {
+    animation-delay: .32s;
+}
+
+.portafolio .galeria .proyecto:nth-child(6) {
+    animation-delay: .4s;
+}
+
+.portafolio .galeria .proyecto:nth-child(7) {
+    animation-delay: .48s;
+}
+
+.portafolio .galeria .proyecto:nth-child(8) {
+    animation-delay: .56s;
+}
 
 .portafolio .nomolestes.oculto {
     display: none;
@@ -910,20 +1082,27 @@ section {
 }
 
 @keyframes apareceTitulo {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .contacto {
     background-image: linear-gradient(rgba(30, 33, 38, 0.7), rgba(30, 35, 38, 0.9)),
-    url(img/fondo1.jpg);
+        url(img/fondo1.jpg);
     color: #fff;
     padding: 50px 0;
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    
+
 }
 
 .contacto .container-section {
@@ -949,7 +1128,8 @@ section {
     position: relative;
 }
 
-.contacto .col input, .contacto .col textarea {
+.contacto .col input,
+.contacto .col textarea {
     display: block;
     width: 100%;
     padding: 18px;
@@ -1082,7 +1262,7 @@ footer .redes {
     margin-top: 55px;
 }
 
-footer .redes a{
+footer .redes a {
     color: #fff;
     display: inline-block;
     text-decoration: none;
@@ -1121,10 +1301,10 @@ footer .arriba {
     width: 50px;
     height: 50px;
     background-color: #caa53d;
-    color:  #fff;
+    color: #fff;
     position: absolute;
     left: 50%;
-    transform:  translateX(-50%);
+    transform: translateX(-50%);
     top: -25px;
     border-radius: 50%;
     line-height: 50px;
@@ -1157,7 +1337,7 @@ footer .copyrite {
     }
     .inicio {
         background-image: linear-gradient(0deg, rgba(49, 48, 45, 0.719), rgba(56, 55, 49, 0.26)),
-        url(img/fondo1.jpg);
+            url(img/fondo1.jpg);
         min-height: 100vh;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1174,20 +1354,50 @@ footer .copyrite {
         display: block;
     }
     nav.responsive {
-        display: block;
+        display: flex;
         position: absolute;
-        right: 20px;
-        top: 100%;
-        background-color: #252a2e;
-        width: 180px;
+        top: calc(90%);
+        right: 10px;
+        width: 61px;
+        max-width: 210px;
+        background-color: rgba(37, 42, 46, 0.75);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        border: 1px solid #af8613;
+        padding: 8px;
     }
+    /* lo que hace que vaya hacia abajo */
     nav.responsive ul {
-        display: block !important;
+        display: flex !important;
+        flex-direction: column;
+        gap: 6px;
+        width: 100%;
     }
-    nav.responsive ul li {
-        border-bottom: 1px solid #fff;
-        padding: 10px 0;
+    nav.responsive ul li a i {
+        min-width: 20px;
+        text-align: center;
+        color: #caa53d;
+        font-size: 18px;
     }
+    /* evita la expancion de dominio del nav */
+    nav.responsive ul li a,
+    nav.responsive ul li .home:hover,
+    nav.responsive ul li .sobre:hover,
+    nav.responsive ul li .habi:hover,
+    nav.responsive ul li .curro:hover,
+    nav.responsive ul li .portal:hover,
+    nav.responsive ul li .llama:hover {
+        width: 42px !important;
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #011927;
+    }
+    nav.responsive ul li a:hover span {
+        opacity: 0 !important;
+        width: 0 !important;
+        transform: translateX(10px);
+    }
+
 }
 
 /* En pantallas intermedias se mantiene el botón hamburguesa alineado a la esquina derecha. */
@@ -1204,9 +1414,24 @@ footer .copyrite {
     .nav-responsive {
         display: block;
     }
+    .container-header header nav ul li a:hover {
+        width: 42px;
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #011927;
+    }
+    .container-header header nav ul li a:hover i {
+        color: #011927;
+    }
+    .container-header header nav ul li a:hover span {
+        opacity: 0;
+        width: 0;
+        transform: translateX(10px);
+    }
 }
 
 @media screen and (max-width:700px) {
+
     html,
     body {
         width: 100%;
@@ -1224,6 +1449,28 @@ footer .copyrite {
         margin-left: auto;
         margin-right: auto;
     }
+
+    nav.responsive {
+        display: flex;
+        position: absolute;
+        margin-top: 185%;
+        right: 13%;
+        width: 305px;
+        max-width: 310px;
+        background-color: rgba(37, 42, 46, 0.75);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        border: 1px solid #af8613;
+        padding: 8px;
+    }
+    nav.responsive ul {
+        display: flex !important;
+        flex-direction: row;
+        gap: 6px;
+        width: 100%;
+    }
+
+
     .contacto {
         height: auto;
         min-height: 100vh;
@@ -1244,7 +1491,7 @@ footer .copyrite {
         visibility: visible;
         pointer-events: auto;
     }
-    .container-header .logo span{
+    .container-header .logo span {
         font-size: 25px;
     }
     .sobremi .fila {

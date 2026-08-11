@@ -60,7 +60,7 @@ if (formularioContacto && mensajeEnvio) {
 // para la hoja de vida
 function descargarCV() {
     const enlace = document.createElement("a");
-    enlace.href = "../Portafolio-master/documentos/Hoja de Vida Esteban Villarreal.pdf";
+    enlace.href = "../documentos/Hoja de Vida Esteban Villarreal.pdf";
     enlace.download = "CV-Esteban-Villarreal.pdf";
     enlace.click();
 }
