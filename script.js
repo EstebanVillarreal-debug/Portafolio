@@ -101,6 +101,78 @@ botonesFiltro.forEach((boton) => {
 
 aplicarFiltro("todos");
 
+//  para el ver más
+document.querySelectorAll('.curriculum .item .ver-mas').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.item');
+        item.classList.toggle('expandido');
+        btn.textContent = item.classList.contains('expandido') ? 'Ver menos' : 'Ver más';
+    });
+});
+
+// para los meteoros
+document.addEventListener("DOMContentLoaded", function () {
+    const inicio = document.querySelector("#inicio");
+    const contenedorMeteoros = document.querySelector("#inicio > .meteoro");
+    if (!inicio || !contenedorMeteoros) {
+        return;
+    }
+    // cantidad de meteoros
+    const cantidadMeteoros = 4;
+
+    // Dividimos la pantalla en zonas.
+    const zonas = [
+        { min: 0, max: 12 },
+        { min: 12, max: 25 },
+        { min: 25, max: 38 },
+        { min: 38, max: 50 },
+        { min: 50, max: 62 },
+        { min: 62, max: 75 },
+        { min: 75, max: 88 },
+        { min: 88, max: 100 }
+    ];
+
+    // mezclar las zonas
+    zonas.sort(() => Math.random() - 0.5);
+    for (let i = 0; i < cantidadMeteoros; i++) {
+        const estrella = document.createElement("span");
+        estrella.classList.add("estrella-fugaz");
+
+        // horizontal
+        const zona = zonas[i % zonas.length];
+        const posicionX =
+            zona.min +
+            Math.random() * (zona.max - zona.min);
+        estrella.style.left = posicionX + "%";
+
+        //  posisicion vertical
+        const posicionY =
+            Math.random() * 80 - 20;
+        estrella.style.top = posicionY + "%";
+
+        //  velocidad
+        const velocidad =
+            Math.random() * 0.8 + 1.5;
+        estrella.style.animationDuration =
+            velocidad + "s";
+
+            //  demora de aparecer
+        estrella.style.animationDelay =
+            (Math.random() * 8) + "s";
+
+            //  tamaño
+        const tamaño =
+            Math.random() * 2 + 4;
+        estrella.style.width =
+            tamaño + "px";
+        estrella.style.height =
+            tamaño + "px";
+
+        // agregar estrella 
+        contenedorMeteoros.appendChild(estrella);
+    }
+});
+
 // para los skills
 function efectobarra() {
     var skills = document.getElementById("skills");
