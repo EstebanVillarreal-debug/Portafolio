@@ -309,7 +309,8 @@ section {
 
 .inicio .container-banner {
     padding: 20px;
-    background-color: #0d2b1e;
+    backdrop-filter: blur(5px);
+    background-color: #0d2b1eb6;
     max-width: 350px;
     margin: auto;
     text-align: center;
@@ -448,8 +449,8 @@ section {
 }
 
 .inicio .container-banner .redes .gmail:hover {
-    background: linear-gradient(90deg, #be1506 0%, #265eb9 70%, #14702d 85%, #e2ab07 100%);
-    border-color: rgb(255, 255, 255);
+    background: linear-gradient(90deg, #df1907 0%, #2e73e2 100%);
+    border-color: rgb(68, 37, 19);
     width: 150px;
 }
 
@@ -465,7 +466,6 @@ section {
     width: 170px;
 }
 
-/* todo el contenedir */
 .sobremi {
     background-color: #071A12;
     color: #fff;
@@ -551,7 +551,7 @@ section {
     border: 1px solid #cf9e18;
 }
 
-.sobremi .fila .col .container-intereses .Intereses:hover .contenerdor-inter {
+.sobremi .fila .col .container-intereses .Intereses.mostrar-tooltip .contenerdor-inter {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
@@ -654,7 +654,7 @@ section {
 .skills .fila .col-iz,
 .skills .fila .col-der {
     width: 90%;
-    padding: 20px 20px;
+    padding: 10px 20px;
     border: 1px solid #156938;
     border-radius: 50px;
     background-color: #133b2a;
@@ -1594,6 +1594,40 @@ footer .copyrite {
         align-items: center;
         animation: fondo 250s ease-in-out infinite alternate;
     }
+
+    .skills .fila {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .skills .fila .col-iz,
+    .skills .fila .col-der {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .skills .fila .col .barra-skill {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:701px) and (max-width:727px) {
+    .skills .fila {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .skills .fila .col-iz,
+    .skills .fila .col-der {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .skills.fila .col .barra-skill {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:700px) {
@@ -1612,24 +1646,28 @@ footer .copyrite {
     .inicio {
         width: 100%;
         max-width: 100%;
-                min-height: 100vh;
+        min-height: 100vh;
         justify-content: center;
         background-position: center;
         background-size: cover;
     }
+
     .inicio .container-banner {
         width: min(350px, calc(100% - 32px));
         margin-left: auto;
         margin-right: auto;
     }
+
     .estrella-fugaz {
         width: 4px;
         height: 4px;
     }
+
     .estrella-fugaz::before {
         width: 100px;
         height: 2px;
     }
+
     .estrella-fugaz::after {
         width: 75px;
         height: 6px;
@@ -1674,17 +1712,21 @@ footer .copyrite {
         align-items: center;
         animation: fondo 160s ease-in-out infinite alternate;
     }
+
     .contacto {
         height: auto;
         min-height: 100vh;
     }
+
     .contacto .fila .col {
         width: 100%;
     }
+
     .contacto .col iframe {
         height: 300px;
         margin-top: 30px;
     }
+
     .contacto .col .info {
         position: static;
         width: 100%;
@@ -1694,75 +1736,93 @@ footer .copyrite {
         visibility: visible;
         pointer-events: auto;
     }
+
     .container-header .logo span {
         font-size: 25px;
     }
+
     .sobremi .fila {
         display: block;
     }
+
     .sobremi .fila .col {
         width: fit-content;
     }
+
     .sobremi .fila .col .container-intereses .Intereses {
         position: relative;
     }
+
     .sobremi .fila .col .container-intereses .Intereses .contenerdor-inter {
         bottom: calc(100% + 12px);
     }
-    /* el cuadro se abre al tocar los extremos se alinean hacia su propio borde y los del centro conservan el centrado. */
-    .sobremi .fila .col .container-intereses .Intereses.activo .contenerdor-inter {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-50%) translateY(0);
-    }
-    .sobremi .fila .col .container-intereses .Intereses:nth-child(3n + 1) .contenerdor-inter {
-        left: 0;
-        transform: translateX(0) translateY(10px);
-    }
-    .sobremi .fila .col .container-intereses .Intereses:nth-child(3n + 1):hover .contenerdor-inter,
-    .sobremi .fila .col .container-intereses .Intereses:nth-child(3n + 1).activo .contenerdor-inter {
-        transform: translateX(0) translateY(0);
-    }
-    .sobremi .fila .col .container-intereses .Intereses:nth-child(3n) .contenerdor-inter {
-        left: auto;
-        right: 0;
-        transform: translateX(0) translateY(10px);
-    }
-    .sobremi .fila .col .container-intereses .Intereses:nth-child(3n):hover .contenerdor-inter,
-    .sobremi .fila .col .container-intereses .Intereses:nth-child(3n).activo .contenerdor-inter {
-        transform: translateX(0) translateY(0);
-    }
+
     .skills .fila {
         display: block;
-        width: 80%;
+        width: 100%;
+        height: auto;
     }
-    .skills.fila .col {
+
+    .skills .fila .col-iz,
+    .skills .fila .col-der {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .skills .fila .col .barra-skill {
         width: 100%;
     }
-    .skills.fila .col .barra-skill {
-        width: 100%;
-    }
+
     .curriculum .fila {
         display: block;
     }
+
     .curriculum .fila .col {
         width: 90%;
     }
-    .curriculum .fila .derecha {
+
+    .curriculum .fila .col.izquierda,
+    .curriculum .fila .col.derecha {
+        border-right: none;
+        margin-right: 20px;
+        border-left: none;
         margin-left: 20px;
     }
+
+    .curriculum .fila .item.izq,
+    .curriculum .fila .item.der {
+        border-right: none;
+        border-left: none
+    }
+
+    .curriculum .fila .item.izq:hover,
+    .curriculum .fila .item.der:hover {
+        border-right: 2px solid #caa53d;
+        border-left: 2px solid #caa53d;
+    }
+
+    .curriculum .fila .item .conectori,
+    .curriculum .fila .item .conectori .circuloi,
+    .curriculum .fila .item .conectord,
+    .curriculum .fila .item .conectord .circulod {
+        display: none;
+    }
+
     .portafolio .galeria {
         grid-template-columns: 1fr;
         gap: 18px;
     }
+
     .portafolio .galeria .proyecto {
         flex: 0 0 calc(50% - 11.5px);
         width: calc(50% - 11.5px);
         max-width: 300px;
     }
+
     .contacto .fila {
         display: block;
     }
+
     .contacto .fila .col {
         width: 100%;
     }
@@ -1774,12 +1834,15 @@ footer .copyrite {
     .sobremi .fila {
         display: block;
     }
+
     .sobremi .fila .col {
         width: 100%;
     }
+
     .sobremi .fila .col:first-child {
         margin-bottom: 40px;
     }
+
     /* siempre 2 por fila, se achican juntas */
     .portafolio .galeria .proyecto {
         flex: 0 0 calc(50% - 11.5px);

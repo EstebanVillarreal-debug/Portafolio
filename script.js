@@ -1,3 +1,4 @@
+// boton hambuerguesa
 let menuvisible = false;
 function mostrarocultarmenu() {
     if (menuvisible) {
@@ -21,6 +22,37 @@ document.querySelectorAll(".Intereses").forEach((interes) => {
             if (otro !== interes) otro.classList.remove("activo");
         });
         interes.classList.toggle("activo");
+    });
+});
+
+document.querySelectorAll('.container-intereses .Intereses').forEach(item => {
+    const tooltip = item.querySelector('.contenerdor-inter');
+
+    item.addEventListener('mouseenter', () => {
+        item.classList.add('mostrar-tooltip');
+
+        // resetear ajuste previo
+        tooltip.style.left = '50%';
+        tooltip.style.right = 'auto';
+        tooltip.style.transform = 'translateX(-50%) translateY(0)';
+
+        const rect = tooltip.getBoundingClientRect();
+        const margen = 10;
+
+        if (rect.left < margen) {
+            // se sale por la izquierda
+            tooltip.style.left = '0';
+            tooltip.style.transform = 'translateX(0) translateY(0)';
+        } else if (rect.right > window.innerWidth - margen) {
+            // se sale por la derecha
+            tooltip.style.left = 'auto';
+            tooltip.style.right = '0';
+            tooltip.style.transform = 'translateX(0) translateY(0)';
+        }
+    });
+
+    item.addEventListener('mouseleave', () => {
+        item.classList.remove('mostrar-tooltip');
     });
 });
 

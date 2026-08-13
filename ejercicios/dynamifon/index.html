@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamifon | Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span>PY</span>
+                <div>
+                    <strong>Dynamifon</strong>
+                    <small>Wallpaper</small>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#funcionamiento">Funcionamiento</a></li>
+                <li><a href="#codigo">Código</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio">
+        <section class="hero">
+            <div class="hero-text">
+                <p class="tag">
+                    &lt; PYTHON PROJECT /&gt;
+                </p>
+                <h1>
+                    Fondos de pantalla
+                    <span>dinámicos</span>
+                </h1>
+                <p class="description">
+                    Un programa desarrollado en Python que genera
+                    automáticamente un fondo de pantalla con la hora,
+                    la fecha y un color que cambia constantemente.
+                </p>
+                <div class="buttons">
+                    <a href="downloads/wallpaper.py" class="btn primary" download="Dynamifon.py">
+                        Descargar programa
+                    </a>
+                    <a href="#codigo" class="btn secondary">
+                        Explorar código
+                    </a>
+                </div>
+            </div>
+            <div class="wallpaper-demo">
+                <div class="screen">
+                    <div class="screen-top">
+                        <span>● SYSTEM ONLINE</span>
+                        <span>PYTHON</span>
+                    </div>
+                    <div class="clock-container">
+                        <div id="clock" class="clock">
+                            00:00
+                        </div>
+                        <div id="date" class="date">
+                            Cargando fecha...
+                        </div>
+                    </div>
+                    <div class="screen-bottom">
+                        <span>COLOR SYSTEM</span>
+                        <div id="colorCircle" class="color-circle"></div>
+                        <span id="rgbText">
+                            RGB(255, 0, 0)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="funcionamiento" class="section">
+            <div class="section-title">
+                <p class="tag">01 / FUNCIONAMIENTO</p>
+                <h2>
+                    ¿Qué hace este <span>programa?</span>
+                </h2>
+                <p>
+                    El programa utiliza Python para crear automáticamente
+                    un fondo de pantalla personalizado y actualizarlo
+                    cada minuto.
+                </p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="card-number">01</div>
+                    <div class="icon">🖼️</div>
+                    <h3>Carga una imagen</h3>
+                    <p>
+                        Python abre una imagen base utilizando
+                        la biblioteca Pillow.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-number">02</div>
+                    <div class="icon">🕐</div>
+                    <h3>Obtiene la hora</h3>
+                    <p>
+                        El programa obtiene la hora y la fecha
+                        actual utilizando datetime.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-number">03</div>
+                    <div class="icon">🌈</div>
+                    <h3>Cambia el color</h3>
+                    <p>
+                        El color se calcula mediante HSV para crear
+                        una transición continua de colores.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-number">04</div>
+                    <div class="icon">🖥️</div>
+                    <h3>Aplica el fondo</h3>
+                    <p>
+                        Windows recibe la imagen generada y la establece
+                        como fondo de pantalla.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="section-title">
+                <p class="tag">02 / PROCESO</p>
+                <h2>
+                    ¿Cómo funciona?
+                </h2>
+            </div>
+
+            <div class="process">
+                <div class="process-item">
+                    <div class="process-icon">01</div>
+                    <div>
+                        <h3>Image.open()</h3>
+                        <p>
+                            Abre la imagen original que servirá
+                            como base del wallpaper.
+                        </p>
+                    </div>
+                </div>
+                <div class="process-line"></div>
+                <div class="process-item">
+                    <div class="process-icon">02</div>
+                    <div>
+                        <h3>datetime.now()</h3>
+                        <p>
+                            Obtiene la hora y fecha actual del sistema.
+                        </p>
+                    </div>
+                </div>
+                <div class="process-line"></div>
+                <div class="process-item">
+                    <div class="process-icon">03</div>
+                    <div>
+                        <h3>colorsys.hsv_to_rgb()</h3>
+                        <p>
+                            Convierte la posición dentro del ciclo
+                            en un color RGB.
+                        </p>
+                    </div>
+                </div>
+                <div class="process-line"></div>
+                <div class="process-item">
+                    <div class="process-icon">04</div>
+                    <div>
+                        <h3>draw.text()</h3>
+                        <p>
+                            Escribe la hora y la fecha sobre la imagen.
+                        </p>
+                    </div>
+                </div>
+                <div class="process-line"></div>
+                <div class="process-item">
+                    <div class="process-icon">05</div>
+                    <div>
+                        <h3>SystemParametersInfoW()</h3>
+                        <p>
+                            Windows utiliza esta función para colocar
+                            la imagen como fondo de pantalla.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="codigo" class="section code-section">
+            <div class="section-title">
+                <p class="tag">03 / CÓDIGO</p>
+                <h2>
+                    Partes importantes
+                </h2>
+                <p>
+                    Estas son algunas de las funciones principales
+                    utilizadas en el proyecto.
+                </p>
+            </div>
+            <div class="code-container">
+                <div class="code-header">
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>wallpaper.py</span>
+                </div>
+                <pre><code><span class="purple">def</span> <span class="blue">color_rgb_segun_tiempo</span>():
+    ahora = datetime.now()
+
+    segundos_totales =
+        ahora.hour * 3600 +
+        ahora.minute * 60 +
+        ahora.second
+
+    ciclo_segundos = CICLO_MINUTOS * 60
+
+    posicion = (
+        segundos_totales % ciclo_segundos
+    ) / ciclo_segundos
+
+    r, g, b = colorsys.hsv_to_rgb(
+        posicion, 1.0, 1.0
+    )
+
+    <span class="purple">return</span> (
+        int(r * 255),
+        int(g * 255),
+        int(b * 255)
+    )</code></pre>
+            </div>
+            <div class="explanation">
+                <div>
+                    <span class="mini-tag">COLOR</span>
+                    <h3>¿Por qué cambia el color?</h3>
+                    <p>
+                        El programa transforma el tiempo actual en una
+                        posición dentro de un ciclo de colores. El valor
+                        HSV recorre el espectro cromático y después se
+                        convierte a RGB para poder utilizarlo en Pillow.
+                    </p>
+                </div>
+                <div>
+                    <span class="mini-tag">CICLO</span>
+                    <h3>¿Cada cuánto cambia?</h3>
+                    <p>
+                        La variable <code>CICLO_MINUTOS</code> determina
+                        cuánto tarda el color en recorrer todo el espectro.
+                        En este proyecto está configurada en 10 minutos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologias" class="section technologies">
+            <div class="section-title">
+                <p class="tag">04 / TECNOLOGÍAS</p>
+                <h2>
+                    Herramientas utilizadas
+                </h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech">
+                    <strong>PY</strong>
+                    <h3>Python</h3>
+                    <p>Lenguaje principal del proyecto.</p>
+                </div>
+                <div class="tech">
+                    <strong>PI</strong>
+                    <h3>Pillow</h3>
+                    <p>Manipulación y edición de imágenes.</p>
+                </div>
+                <div class="tech">
+                    <strong>CT</strong>
+                    <h3>ctypes</h3>
+                    <p>Comunicación con funciones de Windows.</p>
+                </div>
+                <div class="tech">
+                    <strong>DT</strong>
+                    <h3>datetime</h3>
+                    <p>Obtención de fecha y hora.</p>
+                </div>
+                <div class="tech">
+                    <strong>CS</strong>
+                    <h3>colorsys</h3>
+                    <p>Conversión entre espacios de color.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-section">
+            <div class="final-content">
+                <p class="tag">PYTHON / AUTOMATION</p>
+                <h2>
+                    Un fondo que
+                    <span>evoluciona contigo.</span>
+                </h2>
+                <p>
+                    El proyecto combina programación, manipulación de
+                    imágenes, colores y funciones del sistema operativo
+                    para crear una experiencia de escritorio dinámica.
+                </p>
+                <div class="status">
+                    <span class="status-dot"></span>
+                    SISTEMA ACTIVO
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <strong>Dynamifon</strong>
+            <span>Python Project</span>
+        </div>
+        <a href="https://github.com/EstebanVillarreal-debug" target="_blank">
+            <span>@EstebanVillarreal-debug</span>
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
