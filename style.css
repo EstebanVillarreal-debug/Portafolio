@@ -1531,7 +1531,7 @@ footer .copyrite {
         right: 10px;
         width: 61px;
         max-width: 210px;
-        background-color: rgba(37, 42, 46, 0.75);
+        background-color: rgba(40, 48, 34, 0.75);
         backdrop-filter: blur(20px);
         border-radius: 24px;
         border: 1px solid #af8613;
@@ -1640,6 +1640,9 @@ footer .copyrite {
 }
 
 @media screen and (min-width:701px) and (max-width:727px) {
+    .container-header .logo span {
+    font-size: 36px;
+    }
     .inicio {
         background-image: linear-gradient(0deg, rgba(19, 18, 18, 0.466), rgba(56, 55, 49, 0.308)),
             url(img/fondo1.png);
@@ -1687,6 +1690,10 @@ footer .copyrite {
         margin: 0 auto;
     }
 
+    .container-header .logo span {
+    font-size: 26px;
+    }
+
     .inicio {
         width: 100%;
         max-width: 100%;
@@ -1726,7 +1733,7 @@ footer .copyrite {
     #nav {
         display: flex !important;
         position: fixed;
-        bottom: 16px;
+        bottom: 30px;
         left: 50%;
         top: auto;
         right: auto;
@@ -1739,15 +1746,100 @@ footer .copyrite {
         border-radius: 24px;
         border: 1px solid #af8613;
         padding: 8px;
-        z-index: 100;
+        z-index: 101;
     }
 
     #nav ul {
-        display: flex !important;
-        flex-direction: row;
-        gap: 6px;
-        width: 100%;
-        justify-content: center;
+        display: flex;
+        list-style: none;
+        gap: 10px;
+    }
+
+    #nav ul li a {
+        display: flex;
+        align-items: center;
+        height: 42px;
+        width: 42px;
+        margin: 0;
+        padding: 0;
+        border-radius: 50px;
+        color: #fff;
+        background: #ffffff1a;
+        border: 1px solid transparent;
+        overflow: hidden;
+        white-space: nowrap;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    #nav ul li a i {
+        min-width: 42px;
+        flex-shrink: 0;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    #nav ul li a span {
+        padding-right: 16px;
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        transform: translateX(10px);
+        transition: all 0.4s;
+    }
+
+    #nav ul li .home:hover {
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #ffffff;
+        width: 100px;
+    }
+
+    #nav ul li .sobre:hover {
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #ffffff;
+        width: 130px;
+    }
+
+    #nav ul li .habi:hover {
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #ffffff;
+        width: 100px;
+    }
+
+    #nav ul li .curro:hover {
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #ffffff;
+        width: 146px;
+    }
+
+    #nav ul li .portal:hover {
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #ffffff;
+        width: 135px;
+    }
+
+    #nav ul li .llama:hover {
+        background-color: #caa53d;
+        border-color: #caa53d;
+        color: #ffffff;
+        width: 125px;
+    }
+
+    #nav ul li a:hover i {
+        color: #ffffff;
+    }
+
+    #nav ul li a:hover span {
+        opacity: 1;
+        width: auto;
+        transform: translateX(0);
     }
 
     /* espacio para que el footer no quede tapado por la barra flotante */
@@ -1790,10 +1882,6 @@ footer .copyrite {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-    }
-
-    .container-header .logo span {
-        font-size: 25px;
     }
 
     .sobremi .fila {
