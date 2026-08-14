@@ -602,11 +602,12 @@
             <div class="fila">
                 <div class="col">
                     <form id="form-contacto">
-                        <input type="text" placeholder="Tu Nombre" required>
-                        <input type="email" placeholder="Direccion de Correo" required>
-                        <input type="text" placeholder="Numero de Telefono" required>
-                        <input type="text" placeholder="Tema" required>
-                        <textarea name="mensaje" cols="30" rows="10" placeholder="Tu mensaje" required></textarea>
+                        <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                        <input type="email" id="correo" placeholder="Direccion de Correo" required>
+                        <input type="text" id="telefono" placeholder="Numero de Telefono" required>
+                        <input type="text" id="tema" placeholder="Tema" required>
+                        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Tu mensaje"
+                            required></textarea>
                         <button type="submit">Enviar <i class="fa-solid fa-paper-plane"></i>
                             <span class="overlay"></span>
                         </button>
@@ -614,15 +615,14 @@
                     </form>
                 </div>
                 <div class="col">
-                    <iframe class="mapa"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9810.191609237574!2d-75.55120030543789!3d2.384517209954651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b2d49674108bf%3A0x38e100c954f7e4e8!2sGigante%2C%20Huila!5e1!3m2!1ses!2sco!4v1786565092986!5m2!1ses!2sco" 
-                        width="600" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="strict-origin-when-cross-origin">
-                    </iframe>
+                    <div class="mapa-wrapper" onclick="this.classList.add('activo')">
+                        <iframe class="mapa"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9810.191609237574!2d-75.55120030543789!3d2.384517209954651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b2d49674108bf%3A0x38e100c954f7e4e8!2sGigante%2C%20Huila!5e1!3m2!1ses!2sco!4v1786565092986!5m2!1ses!2sco"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                        <div class="mapa-toque">Toca para interactuar con el mapa</div>
+                    </div>
                     <div class="info">
                         <ul>
                             <li>

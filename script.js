@@ -62,25 +62,63 @@ const mensajeEnvio = document.getElementById("mensaje-envio");
 let temporizadorMensajeEnvio;
 
 if (formularioContacto && mensajeEnvio) {
-    // Escucha el envío para controlar lo que ocurre al presionar el botón.
     formularioContacto.addEventListener("submit", (evento) => {
         evento.preventDefault();
 
         const campos = formularioContacto.querySelectorAll("input, textarea");
-        // Recorre cada campo con every para confirmar que ninguno esté vacío y que cumpla sus validaciones.
         const estanCompletos = [...campos].every((campo) => campo.value.trim() !== "" && campo.checkValidity());
 
-        // Verifica que todos los campos estén completos y sean válidos.
         if (!estanCompletos) {
             formularioContacto.reportValidity();
             return;
         }
 
-        mensajeEnvio.textContent = "¡El mensaje se envió correctamente!";
+        const nombre = document.getElementById("nombre").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const tema = document.getElementById("tema").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        const cuerpo = `Hola Esteban,%0D%0A%0D%0AMi nombre es ${encodeURIComponent(nombre)}.%0D%0AMi correo es ${encodeURIComponent(correo)}.%0D%0AMi telefono es ${encodeURIComponent(telefono)}.%0D%0A%0D%0A${encodeURIComponent(mensaje)}`;
+        window.location.href = `mailto:juanevr2007@gmail.com?subject=${encodeURIComponent(tema)}&body=${cuerpo}`;
+
+        mensajeEnvio.textContent = "Abriendo tu aplicación de correo...";
         mensajeEnvio.classList.add("mostrar");
         formularioContacto.reset();
 
-        // Reinicia el tiempo y oculta el mensaje después de seis segundos.
+        clearTimeout(temporizadorMensajeEnvio);
+        temporizadorMensajeEnvio = setTimeout(() => {
+            mensajeEnvio.classList.remove("mostrar");
+            mensajeEnvio.textContent = "";
+        }, 6000);
+    });
+
+//  para el envio de mensajes
+}if (formularioContacto && mensajeEnvio) {
+    formularioContacto.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        const campos = formularioContacto.querySelectorAll("input, textarea");
+        const estanCompletos = [...campos].every((campo) => campo.value.trim() !== "" && campo.checkValidity());
+
+        if (!estanCompletos) {
+            formularioContacto.reportValidity();
+            return;
+        }
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const tema = document.getElementById("tema").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        const cuerpo = `Hola Esteban Villarreal,%0D%0A%0D%0AMi nombre es ${encodeURIComponent(nombre)}.%0D%0AMi correo es ${encodeURIComponent(correo)}.%0D%0AMi telefono es ${encodeURIComponent(telefono)}.%0D%0A%0D%0A${encodeURIComponent(mensaje)}`;
+        window.location.href = `mailto:juanevr2007@gmail.com?subject=${encodeURIComponent(tema)}&body=${cuerpo}`;
+
+        mensajeEnvio.textContent = "Abriendo tu aplicación de correo...";
+        mensajeEnvio.classList.add("mostrar");
+        formularioContacto.reset();
+
         clearTimeout(temporizadorMensajeEnvio);
         temporizadorMensajeEnvio = setTimeout(() => {
             mensajeEnvio.classList.remove("mostrar");
@@ -88,6 +126,26 @@ if (formularioContacto && mensajeEnvio) {
         }, 6000);
     });
 }
+
+// para el nav en 700px
+const navElemento = document.getElementById("nav");
+const navPadreOriginal = navElemento.parentNode;
+const navSiguienteOriginal = navElemento.nextSibling;
+
+function ajustarNavSegunAncho() {
+    if (window.innerWidth <= 700) {
+        if (navElemento.parentNode !== document.body) {
+            document.body.appendChild(navElemento);
+        }
+    } else {
+        if (navElemento.parentNode !== navPadreOriginal) {
+            navPadreOriginal.insertBefore(navElemento, navSiguienteOriginal);
+        }
+    }
+}
+
+ajustarNavSegunAncho();
+window.addEventListener("resize", ajustarNavSegunAncho);
 
 // para la hoja de vida
 function descargarCV() {
