@@ -320,7 +320,7 @@ section {
         0 0 10px #d4af37,
         0 0 10px rgba(212, 175, 55, .5);
     animation: bannerEntrada 1s ease;
-    z-index: 10;
+    z-index: 16;
 }
 
 .inicio .container-banner .container-img {
