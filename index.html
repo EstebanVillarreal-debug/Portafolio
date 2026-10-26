@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Juan Esteban Villarreal Ramírez, técnico en sistemas y tecnólogo en análisis y desarrollo de software.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,655 +16,493 @@
 
 <body>
 
-    <div class="container-header">
-        <header>
-            <div class="logo">
-                <a href="https://github.com/EstebanVillarreal-debug" target="_blank">
-                    <span>@EstebanVillarreal-debug</span>
-                </a>
-            </div>
-            <nav id="nav" class="nav">
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="logo" href="https://github.com/EstebanVillarreal-debug" target="_blank" rel="noopener">
+                <span>@EstebanVillarreal-debug</span>
+            </a>
+
+            <nav id="nav" class="nav" aria-label="Principal">
                 <ul>
-                    <li><a class="home" href="#inicio" onclick="seleccionar()">
-                            <i class="fa-solid fa-house"></i>
-                            <span>Inicio</span>
-                        </a></li>
-                    <li><a class="sobre" href="#sobremi" onclick="seleccionar()">
-                            <i class="fa-solid fa-person"></i>
-                            <span>Sobre Mi</span>
-                        </a></li>
-                    <li><a class="habi" href="#skills" onclick="seleccionar()">
-                            <i class="fa-solid fa-address-book"></i>
-                            <span>Skills</span>
-                        </a></li>
-                    <li><a class="curro" href="#curriculum" onclick="seleccionar()">
-                            <i class="fa-solid fa-clipboard"></i>
-                            <span>Curriculum</span>
-                        </a></li>
-                    <li><a class="portal" href="#portafolio" onclick="seleccionar()">
-                            <i class="fa-solid fa-briefcase"></i>
-                            <span>Portafolio</span>
-                        </a></li>
-                    <li><a class="llama" href="#contacto" onclick="seleccionar()">
-                            <i class="fa-solid fa-mobile-button"></i>
-                            <span>Contacto</span>
-                        </a></li>
+                    <li><a href="#inicio"><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+                    <li><a href="#sobremi"><i class="fa-solid fa-person"></i><span>Sobre mí</span></a></li>
+                    <li><a href="#skills"><i class="fa-solid fa-address-book"></i><span>Skills</span></a></li>
+                    <li><a href="#curriculum"><i class="fa-solid fa-clipboard"></i><span>Currículum</span></a></li>
+                    <li><a href="#portafolio"><i class="fa-solid fa-briefcase"></i><span>Portafolio</span></a></li>
+                    <li><a href="#contacto"><i class="fa-solid fa-mobile-button"></i><span>Contacto</span></a></li>
                 </ul>
             </nav>
-            <div class="nav-responsive" onclick="mostrarocultarmenu()">
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="nav">
                 <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
-
-    <section id="inicio" class="inicio">
-        <div class="meteoro" aria-hidden="true"></div>
-        <div class="container-banner">
-            <div class="container-img">
-                <div class="borde"></div>
-                <img src="img/Foto.jpg" alt="">
-            </div>
-            <h1>Esteban Villarreal</h1>
-            <h2>Técnico y Técnologo en Software</h2>
-            <div class="redes">
-                <a class="facebook" href="https://www.facebook.com/juanesteban.villarrealramirez" target="_blank">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <span>Facebook</span>
-                </a>
-                <a class="gmail" href="mailto:juanevr2007@gmail.com" target="_blank">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>Gmail</span>
-                </a>
-                <a class="instagram" href="https://www.instagram.com/juan.villarreal2/" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span>instagram</span>
-                </a>
-                <a class="linkedin" href="https://www.linkedin.com/in/juan-esteban-villarreal-ram%C3%ADrez-725ab4377/"
-                    target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <span>Linkedin</span>
-                </a>
-            </div>
+            </button>
         </div>
-    </section>
+    </header>
 
-    <section class="sobremi" id="sobremi">
-        <div class="container-section">
-            <h2>Sobre Mi</h2>
-            <p><span>Hola, soy Juan Esteban Villarreal, soy tecnico en sitemas y tegnologo en analisis y desarrollo de
-                    software con más de 2 años de experiencia en las areas.</span></p>
-        </div>
-        <div class="fila">
-            <div class="col">
-                <h3>Datos Personales</h3>
-                <ul>
-                    <li>
-                        <strong>Nacimiento</strong>
-                        03-10-2007
-                    </li>
-                    <li>
-                        <strong>Teléfono</strong>
-                        3174653790
-                    </li>
-                    <li>
-                        <strong>Email</strong>
-                        juanevr2007@gmail.com
-                    </li>
-                    <li>
-                        <strong>Website</strong>
-                        *En proceso*
-                    </li>
-                    <li>
-                        <strong>Direccion</strong>
-                        Gigante, Huila, Colombia
-                    </li>
-                    <li>
-                        <strong>Ocupacion</strong>
-                        Estudiante
-                    </li>
-                </ul>
-            </div>
-            <div class="col">
-                <h3>Intereses</h3>
-                <div class="container-intereses">
-                    <div class="Intereses">
-                        <i class="fa-solid fa-gamepad"></i>
-                        <span>Juegos</span>
-                        <div class="contenerdor-inter">
-                            <h3>Minecraft y Valorant</h3>
-                            <img src="img/juegoss.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="Intereses">
-                        <i class="fa-solid fa-headphones"></i>
-                        <span>Musica</span>
-                        <div class="contenerdor-inter">
-                            <h3>Folk Metal</h3>
-                            <img src="img/musica.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="Intereses">
-                        <i class="fa-solid fa-film"></i>
-                        <span>Peliculas</span>
-                        <div class="contenerdor-inter">
-                            <h3>Transformers</h3>
-                            <img src="img/Peliculas.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="Intereses">
-                        <i class="fa-solid fa-book"></i>
-                        <span>Libros</span>
-                        <div class="contenerdor-inter">
-                            <h3>La biblia de los caidos</h3>
-                            <img src="img/libro.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="Intereses">
-                        <i class="fa-solid fa-camera"></i>
-                        <span>Arte</span>
-                        <div class="contenerdor-inter">
-                            <h3>Arte minecrafteano</h3>
-                            <img src="img/arte.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="Intereses">
-                        <i class="fa-solid fa-laptop"></i>
-                        <span>Tecnologia</span>
-                        <div class="contenerdor-inter">
-                            <h3>Computacion</h3>
-                            <img src="img/computacion.webp" alt="">
-                        </div>
-                    </div>
-                    <div class="Intereses">
-                        <i class="fa-solid fa-guitar"></i>
-                        <span>Musico</span>
-                        <div class="contenerdor-inter">
-                            <h3>5 años interpretando el clarinete</h3>
-                            <img src="img/musico.webp" alt="">
-                        </div>
-                    </div>
-                    <div class="Intereses">
-                        <i class="fa-solid fa-plane"></i>
-                        <span>Viajar</span>
-                        <div class="contenerdor-inter">
-                            <h3>Salir y conocer</h3>
-                            <img src="https://cdn.pixabay.com/animation/2022/12/24/01/36/01-36-27-376_512.gif"
-                                alt="animation">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="button" onclick="descargarCV()">
-            Descargar CV <i class="fa-solid fa-download"></i>
-            <span class="overlay"></span>
-        </button>
-    </section>
+    <main>
 
-    <section class="skills" id="skills">
-        <div class="container-section">
-            <h2>Skills</h2>
-            <div class="fila">
-                <div class="col-iz">
-                    <h3>Technical Skills</h3>
-                    <div class="skill">
-                        <span>JavaScript</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Html y CSS</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>89%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Photoshop</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>90%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Wordpress</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>React</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>70%</span>
-                            </div>
-                        </div>
-                    </div>
+        <!-- INICIO (portada original) -->
+        <section id="inicio" class="inicio">
+            <div class="meteoro" aria-hidden="true"></div>
+            <div class="container-banner">
+                <div class="container-img">
+                    <div class="borde"></div>
+                    <img src="img/Foto.jpg" alt="Foto de Esteban Villarreal">
                 </div>
-                <div class="col-der">
-                    <h3>Profesional Skills</h3>
-                    <div class="skill">
-                        <span>Comunicacion</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>85%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Trabajo en equipo</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>90%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Creatividad</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>95%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Dedicacion</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>95%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Proyect Management</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>70%</span>
-                            </div>
-                        </div>
-                    </div>
+                <h1>Esteban Villarreal</h1>
+                <h2>Técnico y Tecnólogo en Software</h2>
+                <div class="redes">
+                    <a class="facebook" href="https://www.facebook.com/juanesteban.villarrealramirez" target="_blank"
+                        rel="noopener">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a class="gmail" href="mailto:juanevr2007@gmail.com" target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Gmail</span>
+                    </a>
+                    <a class="instagram" href="https://www.instagram.com/juan.villarreal2/" target="_blank"
+                        rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>instagram</span>
+                    </a>
+                    <a class="linkedin"
+                        href="https://www.linkedin.com/in/juan-esteban-villarreal-ram%C3%ADrez-725ab4377/"
+                        target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>Linkedin</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="curriculum" id="curriculum">
-        <div class="container-section">
-            <h2>Curriculum</h2>
-            <div class="fila">
-                <div class="col izquierda">
-                    <h3>Educacion</h3>
-                    <div class="item izq">
-                        <h4>Bachiller Tecnico</h4>
-                        <span class="casa">I.E. IPB</span>
-                        <span class="fecha">2022 - 2024</span>
-                        <p>Finalicé mis estudios de bachillerato en la Institución Educativa Ismael Perdomo Borrero
-                            (IPB), en Gigante, Huila. Durante mi formación obtuve el título de Técnico en Sistemas
-                            (Hardware y Software), destacándome por mi excelente desempeño académico y culminando como
-                            el mejor estudiante de mi clase. Además, participé en diversos procesos de formación
-                            complementaria, obteniendo certificaciones que fortalecieron mis conocimientos y
-                            competencias técnicas.</p>
-                        <button class="ver-mas" type="button">Ver más</button>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Tegnologo en Analisis y Desarrollo de Software</h4>
-                        <span class="casa">SENA</span>
-                        <span class="fecha">2025 - 2027</span>
-                        <p>Obtuve el título de Tecnólogo en Análisis y Desarrollo de Software en el Servicio Nacional de
-                            Aprendizaje (SENA). A lo largo de mi formación adquirí sólidos conocimientos en análisis,
-                            diseño, desarrollo e implementación de soluciones de software, bases de datos, desarrollo
-                            web, metodologías ágiles, pruebas de software y gestión de proyectos tecnológicos. Además,
-                            fortalecí competencias en trabajo en equipo, resolución de problemas, pensamiento lógico y
-                            desarrollo de aplicaciones orientadas a las necesidades del sector productivo.</p>
-                        <button class="ver-mas" type="button">Ver más</button>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Conocimientos sobre la informatica</h4>
-                        <span class="casa">Educacion Independiente</span>
-                        <span class="fecha">2020 - ...</span>
-                        <p>Desde antes de la pandemia he sentido un gran interés por el mundo de la informática y la
-                            tecnología. Durante el confinamiento de 2020 comencé mi aprendizaje de manera autodidacta
-                            con JavaScript y, con el paso de los años, amplié mis conocimientos en tecnologías como
-                            HTML, CSS, MySQL y otras herramientas relacionadas con el desarrollo de software. Esta
-                            experiencia fortaleció mi pasión por la programación y confirmó mi decisión de convertir el
-                            desarrollo de software en mi carrera profesional, manteniéndome en constante aprendizaje
-                            para mejorar mis habilidades y afrontar nuevos retos tecnológicos.</p>
-                        <button class="ver-mas" type="button">Ver más</button>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col derecha">
-                    <h3>Experiencia de trabajo</h3>
-                    <div class="item der">
-                        <h4>Ingreso y salida en una institucions educativa</h4>
-                        <span class="casa">I.E. IPB</span>
-                        <span class="fecha">2023 - 2024</span>
-                        <p>Durante mis años de décimo y undécimo desarrollé e implementé un sistema de registro de
-                            entrada y salida para una institución educativa, con el objetivo de controlar y monitorear
-                            el ingreso y regreso de los estudiantes durante la hora de almuerzo. Este proyecto permitió
-                            llevar un registro organizado de los movimientos de los estudiantes, fortaleciendo la
-                            seguridad institucional y optimizando el proceso de supervisión mediante una solución
-                            tecnológica desarrollada para atender una necesidad real del colegio.</p>
-                        <button class="ver-mas" type="button">Ver más</button>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>GEA</h4>
-                        <span class="casa">SENA - IPB</span>
-                        <span class="fecha">2023 - 2027</span>
-                        <p>Tras desarrollar el sistema de control de ingreso y salida de estudiantes en mi institución
-                            educativa, decidí convertirlo en el proyecto principal de mi formación en el SENA. Mi
-                            objetivo fue ampliar sus funcionalidades y transformarlo en un aplicativo web que permitiera
-                            a directivos, administrativos y docentes gestionar de manera más eficiente la información y
-                            los procesos del colegio. A futuro, mi propósito es seguir perfeccionando esta plataforma
-                            para ofrecerla como una solución tecnológica a otras instituciones educativas que deseen
-                            modernizar y optimizar su gestión escolar.</p>
-                        <button class="ver-mas" type="button">Ver más</button>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Musica Local</h4>
-                        <span class="casa">Independiente</span>
-                        <span class="fecha">En Proceso...</span>
-                        <p>Actualmente en desarrollo junto a un compañero, un proyecto independiente enfocado en la
-                            creación de una aplicación para la reproducción de música. La aplicación permitirá
-                            reproducir canciones almacenadas de forma local y contenido disponible en Internet,
-                            aplicando conocimientos en desarrollo de software, diseño de interfaces y gestión de
-                            contenido multimedia.</p>
-                        <button class="ver-mas" type="button">Ver más</button>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- SOBRE MÍ -->
+        <section id="sobremi" class="section">
+            <div class="wrap">
+                <h2 class="section-title">Sobre mí</h2>
+                <p class="lead">Hola, soy Juan Esteban Villarreal, soy técnico en sistemas y tecnólogo en análisis y
+                    desarrollo de software con más de 2 años de experiencia en las áreas.</p>
 
-    <section class="portafolio" id="portafolio">
-        <div class="container-section">
-            <h2>Portafolio</h2>
-            <p><span>En esta sección encontrarás todos los ejercicios, actividades y proyectos que he desarrollado y
-                    entregado durante mi proceso de formación, así como trabajos realizados de manera independiente para
-                    fortalecer mis habilidades en desarrollo web.</span></p>
-            <div class="filtros">
-                <button class="filtro-btn activo" data-filtro="todos">Todos</button>
-                <button class="filtro-btn" data-filtro="ejer">Ejercicios</button>
-                <button class="filtro-btn" data-filtro="proy">Proyectos</button>
-                <span class="contador-proyectos"></span>
-            </div>
-            <div class="nomolestes" data-seccion="ejer">
-                <h3>Ejercicios</h3>
-            </div>
-            <div class="galeria">
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actidiad html, css, js/Introduccion html/esqueleto-jjk/miperfil2.html"
-                        target="_blank">
-                        <img src="img/ejer1.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 1</h3>
-                            <p>HTML/CSS/JS</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividad Botón/Actividad Botón/JS/index.html" target="_blank">
-                        <img src="img/ejer2.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 2</h3>
-                            <p>Dom Color</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Contador +,-/Boton +,-/boton.html" target="_blank">
-                        <img src="img/ejer3.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 3</h3>
-                            <p>Contador</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/004-Dom_Carro/index.html" target="_blank">
-                        <img src="img/ejer4.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 4</h3>
-                            <p>Dom Carro</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/005-DOM-CursorAnimado/index.html" target="_blank">
-                        <img src="img/ejer5.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 5</h3>
-                            <p>Dom Cursor</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/006-DOM-Cronometro/index.html" target="_blank">
-                        <img src="img/ejer6.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 6</h3>
-                            <p>Dom Cronometro</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/007-DOM-Carrusel/index.html" target="_blank">
-                        <img src="img/ejer7.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 7</h3>
-                            <p>Dom Carrusel</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/008-DOM-Galeria3D/index.html" target="_blank">
-                        <img src="img/ejer8.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 8</h3>
-                            <p>Dom Galeria 3D</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/009-DOM-Mensaje/index.html" target="_blank">
-                        <img src="img/ejer9.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 9</h3>
-                            <p>Dom Galeria 3D</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/010-DOM-Bateria/index.html" target="_blank">
-                        <img src="img/ejer10.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 10</h3>
-                            <p>Dom Bateria</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/011-DOM-Calculadora/" target="_blank">
-                        <img src="img/ejer11.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 11</h3>
-                            <p>Dom Calculadora</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Actividades del 004 - 012/012-DOM-ListaTareas/index.html" target="_blank">
-                        <img src="img/ejer12.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 12</h3>
-                            <p>Dom Lista Tarea</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/Pasapalabra/Pasapalabra/index.html" target="_blank">
-                        <img src="img/ejer13.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 13</h3>
-                            <p>Dom Pasapalabra</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/API_introduccion/API_introduccion/index.html" target="_blank">
-                        <img src="img/ejer14.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 14</h3>
-                            <p>Chistes Randoms</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/API_Paises/API_Paises/index.html" target="_blank">
-                        <img src="img/ejer15.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 15</h3>
-                            <p>API Paises</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="ejer">
-                    <a href="ejercicios/API-Peliculas/API-Peliculas/index.html" target="_blank">
-                        <img src="img/ejer16.png" alt="">
-                        <div class="overlay">
-                            <h3>Ejercicio 16</h3>
-                            <p>API Peliculas</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="nomolestes" data-seccion="proy">
-                <h3>Proyectos</h3>
-            </div>
-            <div class="galeria">
-                <div class="proyecto" data-categoria="proy">
-                    <a href="ejercicios/MusicLocal-master/MusicLocal-master/index.html" target="_blank">
-                        <img src="img/pro1.png" alt="">
-                        <div class="overlay">
-                            <h3>Musica Local</h3>
-                            <p>HTML/CSS/JS</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="proy">
-                    <a href="https://estebanvillarreal-debug.github.io/Gea/ target="_blank">
-                        <img src="img/pro2.png" alt="">
-                        <div class="overlay">
-                            <h3>Gea</h3>
-                            <p>HTML/CSS/JS</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proyecto" data-categoria="proy">
-                    <a href="ejercicios/dynamifon/index.html" target="_blank">
-                        <img src="img/pro3.png" alt="">
-                        <div class="overlay">
-                            <h3>Dynamifon</h3>
-                            <p>HTML/CSS/JS/Python</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contacto" id="contacto">
-        <div class="container-section">
-            <h2>Contacto</h2>
-            <div class="fila">
-                <div class="col">
-                    <form id="form-contacto">
-                        <input type="text" id="nombre" placeholder="Tu Nombre" required>
-                        <input type="email" id="correo" placeholder="Direccion de Correo" required>
-                        <input type="text" id="telefono" placeholder="Numero de Telefono" required>
-                        <input type="text" id="tema" placeholder="Tema" required>
-                        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Tu mensaje"
-                            required></textarea>
-                        <button type="submit">Enviar <i class="fa-solid fa-paper-plane"></i>
-                            <span class="overlay"></span>
-                        </button>
-                        <p id="mensaje-envio" class="mensaje-envio" aria-live="polite"></p>
-                    </form>
-                </div>
-                <div class="col">
-                    <div class="mapa-wrapper" onclick="this.classList.add('activo')">
-                        <iframe class="mapa"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9810.191609237574!2d-75.55120030543789!3d2.384517209954651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b2d49674108bf%3A0x38e100c954f7e4e8!2sGigante%2C%20Huila!5e1!3m2!1ses!2sco!4v1786565092986!5m2!1ses!2sco"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="strict-origin-when-cross-origin">
-                        </iframe>
-                        <div class="mapa-toque">Toca para interactuar con el mapa</div>
+                <div class="two-col">
+                    <div>
+                        <h3>Datos personales</h3>
+                        <dl class="datos">
+                            <div>
+                                <dt>Nacimiento</dt>
+                                <dd>03-10-2007</dd>
+                            </div>
+                            <div>
+                                <dt>Teléfono</dt>
+                                <dd>3174653790</dd>
+                            </div>
+                            <div>
+                                <dt>Email</dt>
+                                <dd>juanevr2007@gmail.com</dd>
+                            </div>
+                            <div>
+                                <dt>Website</dt>
+                                <dd>*En proceso*</dd>
+                            </div>
+                            <div>
+                                <dt>Dirección</dt>
+                                <dd>Gigante, Huila, Colombia</dd>
+                            </div>
+                            <div>
+                                <dt>Ocupación</dt>
+                                <dd>Estudiante</dd>
+                            </div>
+                        </dl>
                     </div>
-                    <div class="info">
-                        <ul>
+
+                    <div>
+                        <h3>Intereses</h3>
+                        <ul class="intereses">
                             <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Gigante, Huila, Colombia
+                                <i class="fa-solid fa-gamepad"></i>
+                                <div><strong>Juegos</strong><span>Minecraft y Valorant</span></div>
                             </li>
                             <li>
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                LLamame: +57 3174653790
+                                <i class="fa-solid fa-headphones"></i>
+                                <div><strong>Música</strong><span>Folk Metal</span></div>
                             </li>
                             <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                E-mail: juanevr2007@gmail.com
+                                <i class="fa-solid fa-film"></i>
+                                <div><strong>Películas</strong><span>Transformers</span></div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-book"></i>
+                                <div><strong>Libros</strong><span>La biblia de los caídos</span></div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-camera"></i>
+                                <div><strong>Arte</strong><span>Arte minecrafteano</span></div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-laptop"></i>
+                                <div><strong>Tecnología</strong><span>Computación</span></div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-guitar"></i>
+                                <div><strong>Músico</strong><span>5 años interpretando el clarinete</span></div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-plane"></i>
+                                <div><strong>Viajar</strong><span>Salir y conocer</span></div>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-            <a class="facebook" href="https://www.facebook.com/juanesteban.villarrealramirez" target="_blank"><i
-                    class="fa-brands fa-facebook-f"></i></a>
-            <a class="gmail" href="mailto:juanevr2007@gmail.com" target="_blank">
-                <i class="fa-solid fa-envelope"></i></a>
-            <a class="instagram" href="https://www.instagram.com/juan.villarreal2/" target="_blank"><i
-                    class="fa-brands fa-instagram"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/in/juan-esteban-villarreal-ram%C3%ADrez-725ab4377/"
-                target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
 
-        <div class="copyrite">
-            <h4>© 2026 Juan Esteban Villarreal Ramírez · Portafolio Académico</h4>
+                <button class="btn" type="button" id="btn-cv">
+                    Descargar CV <i class="fa-solid fa-download"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section section-alt">
+            <div class="wrap">
+                <h2 class="section-title">Skills</h2>
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Technical Skills</h3>
+                        <div class="skill">
+                            <div class="skill-top"><span>JavaScript</span><span>75%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="75"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>Html y CSS</span><span>89%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="89"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>Photoshop</span><span>90%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="90"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>Wordpress</span><span>80%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>React</span><span>70%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="70"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Profesional Skills</h3>
+                        <div class="skill">
+                            <div class="skill-top"><span>Comunicación</span><span>85%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>Trabajo en equipo</span><span>90%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="90"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>Creatividad</span><span>95%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="95"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>Dedicación</span><span>95%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="95"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-top"><span>Proyect Management</span><span>70%</span></div>
+                            <div class="bar"><div class="fill" data-nivel="70"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRÍCULUM -->
+        <section id="curriculum" class="section">
+            <div class="wrap">
+                <h2 class="section-title">Currículum</h2>
+                <div class="two-col">
+
+                    <div>
+                        <h3>Educación</h3>
+                        <div class="timeline">
+                            <article class="item">
+                                <h4>Bachiller Técnico</h4>
+                                <p class="meta"><span class="casa">I.E. IPB</span><span class="fecha">2022 - 2024</span></p>
+                                <p class="texto">Finalicé mis estudios de bachillerato en la Institución Educativa Ismael
+                                    Perdomo Borrero (IPB), en Gigante, Huila. Durante mi formación obtuve el título de
+                                    Técnico en Sistemas (Hardware y Software), destacándome por mi excelente desempeño
+                                    académico y culminando como el mejor estudiante de mi clase. Además, participé en
+                                    diversos procesos de formación complementaria, obteniendo certificaciones que
+                                    fortalecieron mis conocimientos y competencias técnicas.</p>
+                                <button class="ver-mas" type="button">Ver más</button>
+                            </article>
+
+                            <article class="item">
+                                <h4>Tecnólogo en Análisis y Desarrollo de Software</h4>
+                                <p class="meta"><span class="casa">SENA</span><span class="fecha">2025 - 2027</span></p>
+                                <p class="texto">Obtuve el título de Tecnólogo en Análisis y Desarrollo de Software en el
+                                    Servicio Nacional de Aprendizaje (SENA). A lo largo de mi formación adquirí sólidos
+                                    conocimientos en análisis, diseño, desarrollo e implementación de soluciones de
+                                    software, bases de datos, desarrollo web, metodologías ágiles, pruebas de software y
+                                    gestión de proyectos tecnológicos. Además, fortalecí competencias en trabajo en
+                                    equipo, resolución de problemas, pensamiento lógico y desarrollo de aplicaciones
+                                    orientadas a las necesidades del sector productivo.</p>
+                                <button class="ver-mas" type="button">Ver más</button>
+                            </article>
+
+                            <article class="item">
+                                <h4>Conocimientos sobre la informática</h4>
+                                <p class="meta"><span class="casa">Educación Independiente</span><span class="fecha">2020 - ...</span></p>
+                                <p class="texto">Desde antes de la pandemia he sentido un gran interés por el mundo de la
+                                    informática y la tecnología. Durante el confinamiento de 2020 comencé mi aprendizaje
+                                    de manera autodidacta con JavaScript y, con el paso de los años, amplié mis
+                                    conocimientos en tecnologías como HTML, CSS, MySQL y otras herramientas relacionadas
+                                    con el desarrollo de software. Esta experiencia fortaleció mi pasión por la
+                                    programación y confirmó mi decisión de convertir el desarrollo de software en mi
+                                    carrera profesional, manteniéndome en constante aprendizaje para mejorar mis
+                                    habilidades y afrontar nuevos retos tecnológicos.</p>
+                                <button class="ver-mas" type="button">Ver más</button>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Experiencia de trabajo</h3>
+                        <div class="timeline">
+                            <article class="item">
+                                <h4>Ingreso y salida en una institución educativa</h4>
+                                <p class="meta"><span class="casa">I.E. IPB</span><span class="fecha">2023 - 2024</span></p>
+                                <p class="texto">Durante mis años de décimo y undécimo desarrollé e implementé un sistema
+                                    de registro de entrada y salida para una institución educativa, con el objetivo de
+                                    controlar y monitorear el ingreso y regreso de los estudiantes durante la hora de
+                                    almuerzo. Este proyecto permitió llevar un registro organizado de los movimientos de
+                                    los estudiantes, fortaleciendo la seguridad institucional y optimizando el proceso
+                                    de supervisión mediante una solución tecnológica desarrollada para atender una
+                                    necesidad real del colegio.</p>
+                                <button class="ver-mas" type="button">Ver más</button>
+                            </article>
+
+                            <article class="item">
+                                <h4>GEA</h4>
+                                <p class="meta"><span class="casa">SENA - IPB</span><span class="fecha">2023 - 2027</span></p>
+                                <p class="texto">Tras desarrollar el sistema de control de ingreso y salida de estudiantes
+                                    en mi institución educativa, decidí convertirlo en el proyecto principal de mi
+                                    formación en el SENA. Mi objetivo fue ampliar sus funcionalidades y transformarlo en
+                                    un aplicativo web que permitiera a directivos, administrativos y docentes gestionar
+                                    de manera más eficiente la información y los procesos del colegio. A futuro, mi
+                                    propósito es seguir perfeccionando esta plataforma para ofrecerla como una solución
+                                    tecnológica a otras instituciones educativas que deseen modernizar y optimizar su
+                                    gestión escolar.</p>
+                                <button class="ver-mas" type="button">Ver más</button>
+                            </article>
+
+                            <article class="item">
+                                <h4>Música Local</h4>
+                                <p class="meta"><span class="casa">Independiente</span><span class="fecha">En Proceso...</span></p>
+                                <p class="texto">Actualmente en desarrollo junto a un compañero, un proyecto independiente
+                                    enfocado en la creación de una aplicación para la reproducción de música. La
+                                    aplicación permitirá reproducir canciones almacenadas de forma local y contenido
+                                    disponible en Internet, aplicando conocimientos en desarrollo de software, diseño de
+                                    interfaces y gestión de contenido multimedia.</p>
+                                <button class="ver-mas" type="button">Ver más</button>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTAFOLIO -->
+        <section id="portafolio" class="section section-alt">
+            <div class="wrap">
+                <h2 class="section-title">Portafolio</h2>
+                <p class="lead">En esta sección encontrarás todos los ejercicios, actividades y proyectos que he
+                    desarrollado y entregado durante mi proceso de formación, así como trabajos realizados de manera
+                    independiente para fortalecer mis habilidades en desarrollo web.</p>
+
+                <div class="filtros">
+                    <button class="filtro-btn activo" type="button" data-filtro="todos">Todos</button>
+                    <button class="filtro-btn" type="button" data-filtro="ejer">Ejercicios</button>
+                    <button class="filtro-btn" type="button" data-filtro="proy">Proyectos</button>
+                    <span class="contador-proyectos" aria-live="polite"></span>
+                </div>
+
+                <div class="grupo" data-seccion="ejer">
+                    <h3>Ejercicios</h3>
+                    <div class="galeria">
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actidiad html, css, js/Introduccion html/esqueleto-jjk/miperfil2.html"
+                            target="_blank" rel="noopener">
+                            <img src="img/ejer1.png" alt="Ejercicio 1" loading="lazy">
+                            <span class="info"><strong>Ejercicio 1</strong><span>HTML/CSS/JS</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividad Botón/Actividad Botón/JS/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer2.png" alt="Ejercicio 2" loading="lazy">
+                            <span class="info"><strong>Ejercicio 2</strong><span>Dom Color</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer" href="ejercicios/Contador +,-/Boton +,-/boton.html"
+                            target="_blank" rel="noopener">
+                            <img src="img/ejer3.png" alt="Ejercicio 3" loading="lazy">
+                            <span class="info"><strong>Ejercicio 3</strong><span>Contador</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/004-Dom_Carro/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer4.png" alt="Ejercicio 4" loading="lazy">
+                            <span class="info"><strong>Ejercicio 4</strong><span>Dom Carro</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/005-DOM-CursorAnimado/index.html"
+                            target="_blank" rel="noopener">
+                            <img src="img/ejer5.png" alt="Ejercicio 5" loading="lazy">
+                            <span class="info"><strong>Ejercicio 5</strong><span>Dom Cursor</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/006-DOM-Cronometro/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer6.png" alt="Ejercicio 6" loading="lazy">
+                            <span class="info"><strong>Ejercicio 6</strong><span>Dom Cronometro</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/007-DOM-Carrusel/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer7.png" alt="Ejercicio 7" loading="lazy">
+                            <span class="info"><strong>Ejercicio 7</strong><span>Dom Carrusel</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/008-DOM-Galeria3D/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer8.png" alt="Ejercicio 8" loading="lazy">
+                            <span class="info"><strong>Ejercicio 8</strong><span>Dom Galeria 3D</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/009-DOM-Mensaje/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer9.png" alt="Ejercicio 9" loading="lazy">
+                            <span class="info"><strong>Ejercicio 9</strong><span>Dom Galeria 3D</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/010-DOM-Bateria/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer10.png" alt="Ejercicio 10" loading="lazy">
+                            <span class="info"><strong>Ejercicio 10</strong><span>Dom Bateria</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/011-DOM-Calculadora/" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer11.png" alt="Ejercicio 11" loading="lazy">
+                            <span class="info"><strong>Ejercicio 11</strong><span>Dom Calculadora</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/Actividades del 004 - 012/012-DOM-ListaTareas/index.html"
+                            target="_blank" rel="noopener">
+                            <img src="img/ejer12.png" alt="Ejercicio 12" loading="lazy">
+                            <span class="info"><strong>Ejercicio 12</strong><span>Dom Lista Tarea</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer" href="ejercicios/Pasapalabra/Pasapalabra/index.html"
+                            target="_blank" rel="noopener">
+                            <img src="img/ejer13.png" alt="Ejercicio 13" loading="lazy">
+                            <span class="info"><strong>Ejercicio 13</strong><span>Dom Pasapalabra</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/API_introduccion/API_introduccion/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/ejer14.png" alt="Ejercicio 14" loading="lazy">
+                            <span class="info"><strong>Ejercicio 14</strong><span>Chistes Randoms</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer" href="ejercicios/API_Paises/API_Paises/index.html"
+                            target="_blank" rel="noopener">
+                            <img src="img/ejer15.png" alt="Ejercicio 15" loading="lazy">
+                            <span class="info"><strong>Ejercicio 15</strong><span>API Paises</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="ejer"
+                            href="ejercicios/API-Peliculas/API-Peliculas/index.html" target="_blank" rel="noopener">
+                            <img src="img/ejer16.png" alt="Ejercicio 16" loading="lazy">
+                            <span class="info"><strong>Ejercicio 16</strong><span>API Peliculas</span></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grupo" data-seccion="proy">
+                    <h3>Proyectos</h3>
+                    <div class="galeria">
+                        <a class="proyecto" data-categoria="proy"
+                            href="ejercicios/MusicLocal-master/MusicLocal-master/index.html" target="_blank"
+                            rel="noopener">
+                            <img src="img/pro1.png" alt="Música Local" loading="lazy">
+                            <span class="info"><strong>Musica Local</strong><span>HTML/CSS/JS</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="proy" href="https://estebanvillarreal-debug.github.io/Gea/"
+                            target="_blank" rel="noopener">
+                            <img src="img/pro2.png" alt="Gea" loading="lazy">
+                            <span class="info"><strong>Gea</strong><span>HTML/CSS/JS</span></span>
+                        </a>
+                        <a class="proyecto" data-categoria="proy" href="ejercicios/dynamifon/index.html"
+                            target="_blank" rel="noopener">
+                            <img src="img/pro3.png" alt="Dynamifon" loading="lazy">
+                            <span class="info"><strong>Dynamifon</strong><span>HTML/CSS/JS/Python</span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section">
+            <div class="wrap">
+                <h2 class="section-title">Contacto</h2>
+                <div class="two-col contacto-grid">
+                    <div>
+                        <form id="form-contacto" novalidate>
+                            <input type="text" id="nombre" placeholder="Tu Nombre" autocomplete="name" required>
+                            <input type="email" id="correo" placeholder="Dirección de Correo" autocomplete="email"
+                                required>
+                            <input type="text" id="telefono" placeholder="Número de Teléfono" autocomplete="tel"
+                                required>
+                            <input type="text" id="tema" placeholder="Tema" required>
+                            <textarea id="mensaje" rows="7" placeholder="Tu mensaje" required></textarea>
+                            <button class="btn" type="submit">Enviar <i class="fa-solid fa-paper-plane"></i></button>
+                            <p id="mensaje-envio" class="mensaje-envio" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div class="mapa-wrapper" id="mapa-wrapper">
+                            <iframe class="mapa" title="Mapa de Gigante, Huila"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9810.191609237574!2d-75.55120030543789!3d2.384517209954651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b2d49674108bf%3A0x38e100c954f7e4e8!2sGigante%2C%20Huila!5e1!3m2!1ses!2sco!4v1786565092986!5m2!1ses!2sco"
+                                allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                            <div class="mapa-toque">Toca para interactuar con el mapa</div>
+                        </div>
+                        <ul class="info-contacto">
+                            <li><i class="fa-solid fa-location-dot"></i> Gigante, Huila, Colombia</li>
+                            <li><i class="fa-solid fa-mobile-screen"></i> Llámame: +57 3174653790</li>
+                            <li><i class="fa-solid fa-envelope"></i> E-mail: juanevr2007@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <a href="#inicio" class="arriba" aria-label="Volver arriba"><i class="fa-solid fa-angles-up"></i></a>
+        <div class="redes">
+            <a href="https://www.facebook.com/juanesteban.villarrealramirez" target="_blank" rel="noopener"
+                aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="mailto:juanevr2007@gmail.com" aria-label="Gmail"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.instagram.com/juan.villarreal2/" target="_blank" rel="noopener"
+                aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/juan-esteban-villarreal-ram%C3%ADrez-725ab4377/" target="_blank"
+                rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
+        <p class="copyrite">© 2026 Juan Esteban Villarreal Ramírez · Portafolio Académico</p>
     </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
 </body>
 

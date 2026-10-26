@@ -1,184 +1,159 @@
-// boton hambuerguesa
-let menuvisible = false;
-function mostrarocultarmenu() {
-    if (menuvisible) {
-        document.getElementById("nav").classList = "";
-        menuvisible = false;
-    } else {
-        document.getElementById("nav").classList = "responsive";
-        menuvisible = true;
+const nav = document.getElementById("nav");
+const botonMenu = document.querySelector(".menu-toggle");
+
+function cerrarMenu() {
+    nav.classList.remove("abierto");
+    botonMenu.setAttribute("aria-expanded", "false");
+}
+
+botonMenu.addEventListener("click", () => {
+    const abierto = nav.classList.toggle("abierto");
+    botonMenu.setAttribute("aria-expanded", String(abierto));
+});
+
+nav.querySelectorAll("a").forEach((enlace) => enlace.addEventListener("click", cerrarMenu));
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1040) cerrarMenu();
+});
+
+
+const enlacesNav = nav.querySelectorAll("a");
+const secciones = [...document.querySelectorAll("main section[id]")];
+let actualizando = false;
+
+function marcarActivo() {
+    actualizando = false;
+    const referencia = window.scrollY + window.innerHeight * 0.35;
+    let actual = secciones[0];
+
+    secciones.forEach((seccion) => {
+        if (seccion.offsetTop <= referencia) actual = seccion;
+    });
+
+    // al llegar al final de la página, queda marcada la última sección
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        actual = secciones[secciones.length - 1];
     }
+
+    enlacesNav.forEach((enlace) => {
+        enlace.classList.toggle("activo", enlace.getAttribute("href") === "#" + actual.id);
+    });
 }
 
-function seleccionar() {
-    document.getElementById("nav").classList = "";
-    menuvisible = false;
+window.addEventListener("scroll", () => {
+    if (!actualizando) {
+        actualizando = true;
+        requestAnimationFrame(marcarActivo);
+    }
+}, { passive: true });
+
+window.addEventListener("resize", marcarActivo);
+marcarActivo();
+
+
+const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reducirMovimiento && "IntersectionObserver" in window) {
+    const elementos = document.querySelectorAll(
+        ".section .section-title, .section .lead, .section .two-col > *, .section .filtros, .section .btn"
+    );
+
+    const observadorEntrada = new IntersectionObserver(
+        (entradas, observador) => {
+            entradas.forEach((entrada) => {
+                if (!entrada.isIntersecting) return;
+                entrada.target.classList.add("visible");
+                observador.unobserve(entrada.target);
+            });
+        },
+        { threshold: 0.12 }
+    );
+
+    elementos.forEach((el) => {
+        el.classList.add("reveal");
+        observadorEntrada.observe(el);
+    });
 }
 
-// al darle a un interés se alterna la clase "activo" y se cierran cuando le dan a otro.
-document.querySelectorAll(".Intereses").forEach((interes) => {
-    interes.addEventListener("click", () => {
-        document.querySelectorAll(".Intereses").forEach((otro) => {
-            if (otro !== interes) otro.classList.remove("activo");
-        });
-        interes.classList.toggle("activo");
+
+const barras = document.querySelectorAll(".fill");
+
+function llenarBarra(barra) {
+    barra.style.width = barra.dataset.nivel + "%";
+}
+
+if ("IntersectionObserver" in window) {
+    const observadorBarras = new IntersectionObserver(
+        (entradas, observador) => {
+            entradas.forEach((entrada) => {
+                if (!entrada.isIntersecting) return;
+                llenarBarra(entrada.target);
+                observador.unobserve(entrada.target);
+            });
+        },
+        { threshold: 0.6 }
+    );
+    barras.forEach((barra) => observadorBarras.observe(barra));
+} else {
+    barras.forEach(llenarBarra);
+}
+
+
+const itemsCurriculum = document.querySelectorAll(".curriculum .item, #curriculum .item");
+
+function revisarRecorte() {
+    itemsCurriculum.forEach((item) => {
+        if (item.classList.contains("expandido")) return;
+        const texto = item.querySelector(".texto");
+        const boton = item.querySelector(".ver-mas");
+        boton.hidden = texto.scrollHeight <= texto.clientHeight + 1;
+    });
+}
+
+itemsCurriculum.forEach((item) => {
+    const boton = item.querySelector(".ver-mas");
+    boton.addEventListener("click", () => {
+        item.classList.toggle("expandido");
+        boton.textContent = item.classList.contains("expandido") ? "Ver menos" : "Ver más";
     });
 });
 
-document.querySelectorAll('.container-intereses .Intereses').forEach(item => {
-    const tooltip = item.querySelector('.contenerdor-inter');
+window.addEventListener("load", revisarRecorte);
+window.addEventListener("resize", revisarRecorte);
+revisarRecorte();
 
-    item.addEventListener('mouseenter', () => {
-        item.classList.add('mostrar-tooltip');
 
-        // resetear ajuste previo
-        tooltip.style.left = '50%';
-        tooltip.style.right = 'auto';
-        tooltip.style.transform = 'translateX(-50%) translateY(0)';
-
-        const rect = tooltip.getBoundingClientRect();
-        const margen = 10;
-
-        if (rect.left < margen) {
-            // se sale por la izquierda
-            tooltip.style.left = '0';
-            tooltip.style.transform = 'translateX(0) translateY(0)';
-        } else if (rect.right > window.innerWidth - margen) {
-            // se sale por la derecha
-            tooltip.style.left = 'auto';
-            tooltip.style.right = '0';
-            tooltip.style.transform = 'translateX(0) translateY(0)';
-        }
-    });
-
-    item.addEventListener('mouseleave', () => {
-        item.classList.remove('mostrar-tooltip');
-    });
-});
-
-// Busca el formulario y el espacio donde mostraré la confirmación.
-const formularioContacto = document.getElementById("form-contacto");
-const mensajeEnvio = document.getElementById("mensaje-envio");
-let temporizadorMensajeEnvio;
-
-if (formularioContacto && mensajeEnvio) {
-    formularioContacto.addEventListener("submit", (evento) => {
-        evento.preventDefault();
-
-        const campos = formularioContacto.querySelectorAll("input, textarea");
-        const estanCompletos = [...campos].every((campo) => campo.value.trim() !== "" && campo.checkValidity());
-
-        if (!estanCompletos) {
-            formularioContacto.reportValidity();
-            return;
-        }
-
-        const nombre = document.getElementById("nombre").value.trim();
-        const correo = document.getElementById("correo").value.trim();
-        const telefono = document.getElementById("telefono").value.trim();
-        const tema = document.getElementById("tema").value.trim();
-        const mensaje = document.getElementById("mensaje").value.trim();
-
-        const cuerpo = `Hola Esteban,%0D%0A%0D%0AMi nombre es ${encodeURIComponent(nombre)}.%0D%0AMi correo es ${encodeURIComponent(correo)}.%0D%0AMi telefono es ${encodeURIComponent(telefono)}.%0D%0A%0D%0A${encodeURIComponent(mensaje)}`;
-        window.location.href = `mailto:juanevr2007@gmail.com?subject=${encodeURIComponent(tema)}&body=${cuerpo}`;
-
-        mensajeEnvio.textContent = "Abriendo tu aplicación de correo...";
-        mensajeEnvio.classList.add("mostrar");
-        formularioContacto.reset();
-
-        clearTimeout(temporizadorMensajeEnvio);
-        temporizadorMensajeEnvio = setTimeout(() => {
-            mensajeEnvio.classList.remove("mostrar");
-            mensajeEnvio.textContent = "";
-        }, 6000);
-    });
-
-//  para el envio de mensajes
-}if (formularioContacto && mensajeEnvio) {
-    formularioContacto.addEventListener("submit", (evento) => {
-        evento.preventDefault();
-
-        const campos = formularioContacto.querySelectorAll("input, textarea");
-        const estanCompletos = [...campos].every((campo) => campo.value.trim() !== "" && campo.checkValidity());
-
-        if (!estanCompletos) {
-            formularioContacto.reportValidity();
-            return;
-        }
-
-        const nombre = document.getElementById("nombre").value.trim();
-        const correo = document.getElementById("correo").value.trim();
-        const telefono = document.getElementById("telefono").value.trim();
-        const tema = document.getElementById("tema").value.trim();
-        const mensaje = document.getElementById("mensaje").value.trim();
-
-        const cuerpo = `Hola Esteban Villarreal,%0D%0A%0D%0AMi nombre es ${encodeURIComponent(nombre)}.%0D%0AMi correo es ${encodeURIComponent(correo)}.%0D%0AMi telefono es ${encodeURIComponent(telefono)}.%0D%0A%0D%0A${encodeURIComponent(mensaje)}`;
-        window.location.href = `mailto:juanevr2007@gmail.com?subject=${encodeURIComponent(tema)}&body=${cuerpo}`;
-
-        mensajeEnvio.textContent = "Abriendo tu aplicación de correo...";
-        mensajeEnvio.classList.add("mostrar");
-        formularioContacto.reset();
-
-        clearTimeout(temporizadorMensajeEnvio);
-        temporizadorMensajeEnvio = setTimeout(() => {
-            mensajeEnvio.classList.remove("mostrar");
-            mensajeEnvio.textContent = "";
-        }, 6000);
-    });
-}
-
-// para el nav en 700px
-const navElemento = document.getElementById("nav");
-const navPadreOriginal = navElemento.parentNode;
-const navSiguienteOriginal = navElemento.nextSibling;
-
-function ajustarNavSegunAncho() {
-    if (window.innerWidth <= 700) {
-        if (navElemento.parentNode !== document.body) {
-            document.body.appendChild(navElemento);
-        }
-    } else {
-        if (navElemento.parentNode !== navPadreOriginal) {
-            navPadreOriginal.insertBefore(navElemento, navSiguienteOriginal);
-        }
-    }
-}
-
-ajustarNavSegunAncho();
-window.addEventListener("resize", ajustarNavSegunAncho);
-
-// para la hoja de vida
-function descargarCV() {
+document.getElementById("btn-cv").addEventListener("click", () => {
     const enlace = document.createElement("a");
     enlace.href = "documentos/HojadeVidaEstebanVillarreal.pdf";
     enlace.download = "HV-Esteban-Villarreal.pdf";
+    document.body.appendChild(enlace);
     enlace.click();
-}
+    enlace.remove();
+});
 
-// para los filtros
 
 const botonesFiltro = document.querySelectorAll(".filtro-btn");
-const proyectosGaleria = document.querySelectorAll(".portafolio .proyecto");
-const encabezadosSeccion = document.querySelectorAll(".portafolio .nomolestes");
-const contadorProyectos = document.querySelector(".contador-proyectos");
+const proyectos = document.querySelectorAll("#portafolio .proyecto");
+const grupos = document.querySelectorAll("#portafolio .grupo");
+const contador = document.querySelector(".contador-proyectos");
 
 function aplicarFiltro(categoria) {
     let visibles = 0;
 
-    proyectosGaleria.forEach((proyecto) => {
+    proyectos.forEach((proyecto) => {
         const coincide = categoria === "todos" || proyecto.dataset.categoria === categoria;
         proyecto.classList.toggle("oculto", !coincide);
         if (coincide) visibles++;
     });
 
-    encabezadosSeccion.forEach((encabezado) => {
-        const esDeEstaSeccion = categoria === "todos" || encabezado.dataset.seccion === categoria;
-        encabezado.classList.toggle("oculto", !esDeEstaSeccion);
+    grupos.forEach((grupo) => {
+        const coincide = categoria === "todos" || grupo.dataset.seccion === categoria;
+        grupo.classList.toggle("oculto", !coincide);
     });
 
-    if (contadorProyectos) {
-        contadorProyectos.textContent = `${visibles} proyecto${visibles === 1 ? "" : "s"}`;
-    }
+    contador.textContent = visibles + (visibles === 1 ? " proyecto" : " proyectos");
 }
 
 botonesFiltro.forEach((boton) => {
@@ -191,23 +166,61 @@ botonesFiltro.forEach((boton) => {
 
 aplicarFiltro("todos");
 
-//  para el ver más
-document.querySelectorAll('.curriculum .item .ver-mas').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.closest('.item');
-        item.classList.toggle('expandido');
-        btn.textContent = item.classList.contains('expandido') ? 'Ver menos' : 'Ver más';
-    });
+
+const mapaWrapper = document.getElementById("mapa-wrapper");
+mapaWrapper.addEventListener("click", () => mapaWrapper.classList.add("activo"));
+
+
+const formulario = document.getElementById("form-contacto");
+const mensajeEnvio = document.getElementById("mensaje-envio");
+let temporizadorMensaje;
+
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+
+    if (!formulario.checkValidity()) {
+        formulario.reportValidity();
+        return;
+    }
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const tema = document.getElementById("tema").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    const cuerpo = [
+        "Hola Esteban,",
+        "",
+        "Mi nombre es " + nombre + ".",
+        "Mi correo es " + correo + ".",
+        "Mi teléfono es " + telefono + ".",
+        "",
+        mensaje
+    ].join("\n");
+
+    window.location.href =
+        "mailto:juanevr2007@gmail.com?subject=" + encodeURIComponent(tema) + "&body=" + encodeURIComponent(cuerpo);
+
+    mensajeEnvio.textContent = "Abriendo tu aplicación de correo...";
+    mensajeEnvio.classList.add("mostrar");
+    formulario.reset();
+
+    clearTimeout(temporizadorMensaje);
+    temporizadorMensaje = setTimeout(() => {
+        mensajeEnvio.classList.remove("mostrar");
+        mensajeEnvio.textContent = "";
+    }, 6000);
 });
 
-// para los meteoros
+
 document.addEventListener("DOMContentLoaded", function () {
     const inicio = document.querySelector("#inicio");
     const contenedorMeteoros = document.querySelector("#inicio > .meteoro");
     if (!inicio || !contenedorMeteoros) {
         return;
     }
-    // cantidad de meteoros
+
     const cantidadMeteoros = 4;
 
     // Dividimos la pantalla en zonas.
@@ -224,171 +237,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // mezclar las zonas
     zonas.sort(() => Math.random() - 0.5);
+
     for (let i = 0; i < cantidadMeteoros; i++) {
         const estrella = document.createElement("span");
         estrella.classList.add("estrella-fugaz");
 
         // horizontal
         const zona = zonas[i % zonas.length];
-        const posicionX =
-            zona.min +
-            Math.random() * (zona.max - zona.min);
-        estrella.style.left = posicionX + "%";
+        estrella.style.left = (zona.min + Math.random() * (zona.max - zona.min)) + "%";
 
-        //  posisicion vertical
-        const posicionY =
-            Math.random() * 80 - 20;
-        estrella.style.top = posicionY + "%";
+        // vertical
+        estrella.style.top = (Math.random() * 80 - 20) + "%";
 
-        //  velocidad
-        const velocidad =
-            Math.random() * 0.8 + 1.5;
-        estrella.style.animationDuration =
-            velocidad + "s";
+        // velocidad
+        estrella.style.animationDuration = (Math.random() * 0.8 + 1.5) + "s";
 
-            //  demora de aparecer
-        estrella.style.animationDelay =
-            (Math.random() * 8) + "s";
+        // demora de aparecer
+        estrella.style.animationDelay = (Math.random() * 8) + "s";
 
-            //  tamaño
-        const tamaño =
-            Math.random() * 2 + 4;
-        estrella.style.width =
-            tamaño + "px";
-        estrella.style.height =
-            tamaño + "px";
+        // tamaño
+        const tamano = Math.random() * 2 + 4;
+        estrella.style.width = tamano + "px";
+        estrella.style.height = tamano + "px";
 
-        // agregar estrella 
         contenedorMeteoros.appendChild(estrella);
     }
 });
-
-// para los skills
-function efectobarra() {
-    var skills = document.getElementById("skills");
-    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if (distancia_skills >= 300) {
-        let barra = document.getElementsByClassName("progreso");
-        barra[0].classList.add("javascript");
-        barra[1].classList.add("htmlcss");
-        barra[2].classList.add("photoshop");
-        barra[3].classList.add("wordpress");
-        barra[4].classList.add("react");
-        barra[5].classList.add("comunicacion");
-        barra[6].classList.add("equipo");
-        barra[7].classList.add("creatividad");
-        barra[8].classList.add("dedicacion");
-        barra[9].classList.add("proyect");
-    }
-}
-
-window.onscroll = function () {
-    efectobarra();
-}
-
-if (typeof ScrollReveal !== "undefined") {
-    const esCelular = window.matchMedia("(max-width: 700px)").matches;
-
-    // Base del scroll
-    ScrollReveal({
-        distance: esCelular ? '38px' : '60px',
-        duration: esCelular ? 700 : 1000,
-        easing: 'cubic-bezier(0.2, 0.65, 0.3, 1)',
-        reset: false,
-        viewFactor: esCelular ? 0.18 : 0
-    });
-
-    // sobre mi scroll
-    ScrollReveal().reveal('.sobremi h2', {
-        origin: 'top'
-    });
-
-    ScrollReveal().reveal('.sobremi p', {
-        origin: 'left'
-    });
-
-    ScrollReveal().reveal('.sobremi .col', {
-        origin: 'right'
-    });
-
-    ScrollReveal().reveal('.Intereses', {
-        origin: 'bottom',
-        interval: 100
-    });
-
-    //  skills scroll
-
-    ScrollReveal().reveal('.skills h2', {
-        origin: 'top'
-    });
-
-    ScrollReveal().reveal('.skills .col', {
-        origin: 'left',
-        interval: 200
-    });
-
-    ScrollReveal().reveal('.skills .skill', {
-        origin: 'right',
-        interval: 150
-    });
-
-    // curriculum scroll
-    ScrollReveal().reveal('.curriculum h2', {
-        origin: 'top'
-    });
-
-    ScrollReveal().reveal('.curriculum .izquierda', {
-        origin: 'left'
-    });
-
-    ScrollReveal().reveal('.curriculum .derecha', {
-        origin: 'right'
-    });
-
-    ScrollReveal().reveal('.curriculum .item', {
-        distance: '80px',
-        interval: 200
-    });
-
-    // portafolio scroll
-    ScrollReveal().reveal('.portafolio h2', {
-        origin: 'top',
-    });
-
-    ScrollReveal().reveal('.portafolio p', {
-        origin: 'left',
-    });
-
-    // contacto scroll
-    ScrollReveal().reveal('.contacto h2', {
-        origin: 'top'
-    });
-
-    ScrollReveal().reveal('.contacto .col:first-child', {
-        origin: 'left'
-    });
-
-    ScrollReveal().reveal('.contacto .col:last-child', {
-        origin: 'right'
-    });
-
-    ScrollReveal().reveal('.contacto form input', {
-        origin: 'left',
-        interval: 100
-    });
-
-    ScrollReveal().reveal('.contacto textarea', {
-        origin: 'bottom'
-    });
-
-    ScrollReveal().reveal('.contacto button', {
-        origin: 'bottom',
-        delay: 300
-    });
-
-    // footer scroll
-    ScrollReveal().reveal('footer', {
-        origin: 'bottom'
-    });
-
-}
