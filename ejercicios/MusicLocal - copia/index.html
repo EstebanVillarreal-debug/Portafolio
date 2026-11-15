@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music/Locate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/file-earmark-music.svg" type="image/x-icon">
+</head>
+
+<body>
+    <section class="Reproductor-musica">
+
+        <!-- izquierda: botones + playlist -->
+        <aside class="panel-lateral panel-playlist">
+            <div class="selector-archivos">
+                <div class="selector selector-musica">
+                    <label for="musica-input"><i class="bi bi-music-note-list"></i> Canciones</label>
+                    <input id="musica-input" type="file" multiple accept="audio/*">
+                </div>
+                <div class="selector selector-fondo">
+                    <label for="fondo-input"><i class="bi bi-image"></i> Fondo</label>
+                    <input id="fondo-input" type="file" accept="image/*">
+                </div>
+            </div>
+
+            <div class="playlist">
+                <div class="lista-cabecera">
+                    <h2>Mi Playlist</h2>
+                    <button id="playlist-vaciar" class="boton-mini" type="button" hidden>
+                        <i class="bi bi-trash3"></i> Vaciar
+                    </button>
+                </div>
+                <ul id="playlist-container">
+                    <li class="vacio">Agrega tus canciones</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- tarjeta del reproductor -->
+        <div class="tarjeta">
+            <!-- imagen de la canción -->
+            <div id="cover-container">
+                <img id="cover" alt="" style="display:none;">
+                <i id="cover-icon" class="bi bi-music-note-beamed"></i>
+            </div>
+
+            <h1>Titulo</h1>
+            <p>Nombre</p>
+            <audio id="cancion" preload="auto"></audio>
+
+            <!--barra reproduccion-->
+            <input type="range" value="0" id="progreso" />
+
+            <div class="controles">
+                <button class="aleatorio control" aria-label="Aleatorio">
+                    <i class="bi bi-shuffle" id="iconoaleatorio"></i>
+                </button>
+                <button class="atras control" aria-label="Anterior">
+                    <i class="bi bi-arrow-left-short"></i>
+                </button>
+                <button class="boton-reproducir-pausar iconControl" aria-label="Reproducir o pausar">
+                    <i class="bi bi-play-fill" id="iconControl"></i>
+                </button>
+                <button class="siguiente control" aria-label="Siguiente">
+                    <i class="bi bi-arrow-right-short"></i>
+                </button>
+                <button class="repetir control" aria-label="Repetir">
+                    <i class="bi bi-arrow-repeat" id="iconorepetir"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- derecha: biblioteca con todas las canciones cargadas, para elegir cuales van a la playlist -->
+        <aside class="panel-lateral panel-biblioteca">
+            <div class="selector-archivos">
+                <div class="selector selector-carpeta">
+                    <label for="carpeta-input"><i class="bi bi-folder-plus"></i> Abrir carpeta</label>
+                    <input id="carpeta-input" type="file" webkitdirectory>
+                </div>
+            </div>
+
+            <div class="playlist biblioteca">
+                <div class="lista-cabecera">
+                    <h2 id="biblioteca-titulo">Biblioteca</h2>
+                    <button id="biblioteca-agregar-todo" class="boton-mini" type="button" hidden>
+                        <i class="bi bi-plus-lg"></i> Todas
+                    </button>
+                </div>
+                <input id="biblioteca-buscar" class="buscador" type="search" placeholder="Buscar canción..." autocomplete="off" hidden>
+                <ul id="biblioteca-container"></ul>
+            </div>
+        </aside>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.5/dist/jsmediatags.min.js"></script>
+    <!--lee la caratura de la canción-->
+    <script src="script.js"></script>
+
+    <!-- extras visuales: relleno de la barra y animacion de la portada al sonar -->
+    <script>
+        (function () {
+            const cancion = document.getElementById('cancion');
+            const progreso = document.getElementById('progreso');
+            const tarjeta = document.querySelector('.tarjeta');
+
+            function rellenar() {
+                const max = parseFloat(progreso.max) || 100;
+                const pct = (parseFloat(progreso.value) / max) * 100 || 0;
+                progreso.style.setProperty('--pct', pct + '%');
+            }
+
+            ['input', 'change'].forEach(function (e) {
+                progreso.addEventListener(e, rellenar);
+            });
+            ['timeupdate', 'loadedmetadata', 'emptied'].forEach(function (e) {
+                cancion.addEventListener(e, rellenar);
+            });
+
+            cancion.addEventListener('play', function () {
+                tarjeta.classList.add('reproduciendo');
+            });
+            ['pause', 'ended'].forEach(function (e) {
+                cancion.addEventListener(e, function () {
+                    tarjeta.classList.remove('reproduciendo');
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
