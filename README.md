@@ -25,22 +25,21 @@ Portafolio/
 ├──📂ejercicios 
 ├──📂img
 ├── index.html
-├── css
+├──README.MD
 ├── js
-└──README.MD
+└── css
 ```
 
 ## Vista previa
 
-<img width="1905" height="946" alt="image" src="https://github.com/user-attachments/assets/3e94f777-5708-4cfd-b361-1e4ebd8238ba" />
+<img width="1905" height="946" alt="image" src="img/pro67.png" />
 
 ## Proyectos
 
 | Proyecto | Descripción | Tecnologías |
 |----------|-------------|-------------|
 | 🚧 Musica Local | Próximamente | HTML · CSS · JavaScript |
-| 🚧 PGea | Próximamente | HTML · CSS · JavaScript |
-| 🚧 Funtris | Próximamente | HTML · CSS · JavaScript · Python |
+| 🚧 Gea | Próximamente | HTML · CSS · JavaScript |
 
 ## Objetivos
 
